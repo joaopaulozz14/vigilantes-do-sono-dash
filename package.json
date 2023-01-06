@@ -1,7 +1,7 @@
 {
-  "name": "vigilantesdosono-dashboard",
-  "version": "0.1.0",
-  "private": true,
+	"name": "vigilantesdosono-dashboard",
+	"version": "0.1.0",
+	"private": true,
 	"dependencies": {
 		"axios": "^1.0.0-alpha.1",
 		"react": "^18.2.0",
@@ -33,28 +33,31 @@
 		"prettier": "^2.7.1",
 		"typescript": "^4.6.4"
 	},
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+		"lint": "eslint --fix \"src/**/*.{ts,tsx}\"",
+		"format": "prettier -w .",
+		"prodev": "npm run lint && npm run format && npm start"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	}
 }
