@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Vigilantes do sono",
+  "name": "Dashboard administrativo para exibição de relatórios do aplicativo Vigi",
   "icons": [
     {
       "src": "favicon.ico",
