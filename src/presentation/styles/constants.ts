@@ -1,4 +1,6 @@
-export const constants: CssConstants = {
+import { ICssConstants } from "../../@types";
+
+export const constants: ICssConstants = {
 	FontFamily: "Audiowide",
 };
 

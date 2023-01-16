@@ -4,7 +4,7 @@ import {
 	GlobalStyleComponent,
 	ThemeProps,
 } from "styled-components/macro";
-import mixings from "./mixins";
+import mixings from "./mixings";
 
 const GlobalStyle: GlobalStyleComponent<
 	ThemeProps<DefaultTheme>,
