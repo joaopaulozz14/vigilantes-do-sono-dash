@@ -1,3 +1,4 @@
+import { AllProvidersProps, Auth, AuthProviderData } from "@types";
 import { createContext, useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../adapters";

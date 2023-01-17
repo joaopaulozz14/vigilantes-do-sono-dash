@@ -4,9 +4,9 @@ import {
 	GlobalStyleComponent,
 	ThemeProps,
 } from "styled-components/macro";
-import theme from "./theme";
+import { theme } from "./theme";
 
-const GlobalStyle: GlobalStyleComponent<
+export const GlobalStyle: GlobalStyleComponent<
 	ThemeProps<DefaultTheme>,
 	DefaultTheme
 > = createGlobalStyle`
@@ -50,5 +50,3 @@ body::-webkit-scrollbar-thumb {
 	border-radius: 20px;
 }
 `;
-
-export default GlobalStyle;

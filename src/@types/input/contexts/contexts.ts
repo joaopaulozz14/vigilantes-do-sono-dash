@@ -1,3 +1,9 @@
+import { ReactNode } from "react";
+
+export interface AllProvidersProps {
+	children: ReactNode;
+}
+
 export interface AuthProviderData {
 	logged: boolean;
 	login: (params: Auth) => void;

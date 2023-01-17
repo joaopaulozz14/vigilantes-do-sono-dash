@@ -5,12 +5,10 @@ interface ProvidersProps {
 	children: ReactNode;
 }
 
-const Providers = ({ children }: ProvidersProps): JSX.Element => {
+export const Providers = ({ children }: ProvidersProps): JSX.Element => {
 	return (
 		<BrowserRouter>
 			<AuthProvider>{children}</AuthProvider>
 		</BrowserRouter>
 	);
 };
-
-export default Providers;
