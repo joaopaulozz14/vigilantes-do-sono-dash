@@ -1,4 +1,6 @@
-export const colors: CssColors = {
+import { ICssColors } from "@types";
+
+export const colors: ICssColors = {
 	baseBg1Dark: "#212021",
 	baseBg2Dark: "#313131",
 

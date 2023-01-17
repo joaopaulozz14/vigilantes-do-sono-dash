@@ -1,3 +1,3 @@
 export interface ICssConstants {
-    FontFamily: string;
+	FontFamily: string;
 }

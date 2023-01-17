@@ -4,7 +4,7 @@ import {
 	GlobalStyleComponent,
 	ThemeProps,
 } from "styled-components/macro";
-import mixings from "./mixings";
+import theme from "./theme";
 
 const GlobalStyle: GlobalStyleComponent<
 	ThemeProps<DefaultTheme>,
@@ -34,19 +34,19 @@ const GlobalStyle: GlobalStyleComponent<
 html, body {
 		height: 100vh;
 		box-sizing: border-box;
-		font-family: ${mixings.constants.FontFamily};
+		font-family: ${theme.constants.FontFamily};
 		font-weight: 400;
 	}
 body::-webkit-scrollbar-track {
-	background-color: ${mixings.colors.baseBg1Dark};
+	background-color: ${theme.colors.baseBg1Dark};
 }
 body::-webkit-scrollbar {
 	width: 1.3vw;
-	background: ${mixings.colors.baseBg2Dark};
+	background: ${theme.colors.baseBg2Dark};
 }
 body::-webkit-scrollbar-thumb {
-	background: ${mixings.colors.baseBg2Dark};
-	box-shadow: 0 0 3rem 0 ${mixings.colors.baseBg2Dark}, inset 0 0 1.8rem 0.5rem ${mixings.colors.contrast1}33;
+	background: ${theme.colors.baseBg2Dark};
+	box-shadow: 0 0 3rem 0 ${theme.colors.baseBg2Dark}, inset 0 0 1.8rem 0.5rem ${theme.colors.contrast1}33;
 	border-radius: 20px;
 }
 `;

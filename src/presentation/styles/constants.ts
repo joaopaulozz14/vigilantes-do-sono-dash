@@ -1,4 +1,4 @@
-import { ICssConstants } from "../../@types";
+import { ICssConstants } from "@types";
 
 export const constants: ICssConstants = {
 	FontFamily: "Audiowide",

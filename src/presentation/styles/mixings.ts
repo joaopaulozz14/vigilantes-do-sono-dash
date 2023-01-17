@@ -1,5 +1,6 @@
+import { ICssMixings } from "@types";
 import { constants } from "./constants";
 
-export const mixings = {
-    defaultFont: constants.FontFamily
-}
+export const mixings: ICssMixings = {
+	defaultFont: constants.FontFamily,
+};
