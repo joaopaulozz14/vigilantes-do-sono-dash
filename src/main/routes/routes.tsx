@@ -1,3 +1,4 @@
+import { Login } from "presentation";
 import { Route, Routes } from "react-router-dom";
 
 export const Router = (): JSX.Element => {
@@ -5,7 +6,7 @@ export const Router = (): JSX.Element => {
 		<Routes>
 			<Route
 				path="/login"
-				element={<div>home</div>}
+				element={<Login />}
 			/>
 			<Route
 				path="/"
