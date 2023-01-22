@@ -1,16 +1,12 @@
-import HighBar from "../../components/highBar/index";
+//import UpperBar from "../../components/upperBar/index";
 import SideBar from "../../components/sideBar/index";
 import { Container } from "presentation/styles/Home";
 
 const Home = (): JSX.Element => {
 	return (
 		<Container>
-			<div>
-				<HighBar />
-			</div>
-			<div>
-				<SideBar />
-			</div>
+			<SideBar />
+
 			<main>Página Home</main>
 		</Container>
 	);

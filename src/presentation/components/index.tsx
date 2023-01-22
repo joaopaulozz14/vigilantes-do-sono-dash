@@ -1,2 +1,2 @@
 export * from "./sideBar";
-export * from "./highBar";
+export * from "./upperBar";
