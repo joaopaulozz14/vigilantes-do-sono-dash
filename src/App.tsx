@@ -11,7 +11,6 @@ function App(): JSX.Element {
 	}
 	return (
 		<div className="App">
-			Vigilantes do sono - Dashboard - KerannaYumi
 			<Providers>
 				<GlobalStyle />
 				<Router />

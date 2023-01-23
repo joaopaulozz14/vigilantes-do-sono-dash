@@ -1,4 +1,5 @@
 import { Login } from "presentation";
+import Home from "presentation/pages/Home";
 import { Route, Routes } from "react-router-dom";
 
 export const Router = (): JSX.Element => {
@@ -10,7 +11,7 @@ export const Router = (): JSX.Element => {
 			/>
 			<Route
 				path="/"
-				element={<div>home</div>}
+				element={<Home />}
 			/>
 		</Routes>
 	);
