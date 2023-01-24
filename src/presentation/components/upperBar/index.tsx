@@ -2,7 +2,13 @@ import * as S from "./styles";
 const UpperBar = (): JSX.Element => {
 	return (
 		<S.Menu>
-			<div>Barra Superior</div>
+			<aside className="container">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</aside>
 		</S.Menu>
 	);
 };
