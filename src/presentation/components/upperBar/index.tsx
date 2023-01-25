@@ -1,7 +1,8 @@
-import * as S from "./styles";
+import { SSideMenu } from "presentation";
+
 const UpperBar = (): JSX.Element => {
 	return (
-		<S.Menu>
+		<SSideMenu>
 			<aside className="container">
 				<div></div>
 				<div></div>
@@ -9,7 +10,7 @@ const UpperBar = (): JSX.Element => {
 				<div></div>
 				<div></div>
 			</aside>
-		</S.Menu>
+		</SSideMenu>
 	);
 };
 
