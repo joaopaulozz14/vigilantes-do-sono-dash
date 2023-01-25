@@ -1,7 +1,8 @@
-import { Container } from "presentation/styles/Login";
+import { SLoginContainer } from "presentation";
+
 export const Login = (): JSX.Element => {
 	return (
-		<Container>
+		<SLoginContainer>
 			<div className="container">
 				<h2>Login</h2>
 
@@ -36,6 +37,6 @@ export const Login = (): JSX.Element => {
 					Forgot your password<a href="#">Click Here</a>
 				</p>
 			</div>
-		</Container>
+		</SLoginContainer>
 	);
 };

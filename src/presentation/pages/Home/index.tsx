@@ -1,14 +1,13 @@
 import UpperBar from "../../components/upperBar/index";
 import SideBar from "../../components/sideBar/index";
-import { Container } from "presentation/styles/Home";
+import { SHomeContainer } from "presentation";
 
 const Home = (): JSX.Element => {
 	return (
-		<Container>
+		<SHomeContainer>
 			<SideBar />
 			<UpperBar />
-			<main>Página Home</main>
-		</Container>
+		</SHomeContainer>
 	);
 };
 
