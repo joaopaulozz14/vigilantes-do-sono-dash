@@ -1,10 +1,10 @@
-import { theme } from "presentation/styles/theme";
+import { theme } from "presentation";
 import styled, {
 	css,
 	FlattenSimpleInterpolation,
 } from "styled-components/macro";
 
-const MenuItemModifiers = {
+const SMenuItemModifiers = {
 	buttonIcon: (): FlattenSimpleInterpolation => css`
 		height: 56px;
 		width: 56px;
@@ -21,7 +21,7 @@ const MenuItemModifiers = {
 		}
 	`,
 };
-export const Menu = styled.menu`
+export const SSideMenu = styled.menu`
 	margin: 0;
 	padding: 20px 0;
 	height: 100vh;
@@ -41,7 +41,7 @@ export const Menu = styled.menu`
 	}
 `;
 
-export const MenuLogo = styled.div`
+export const SMenuLogo = styled.div`
 	display: flex;
 	justify-content: center;
 	padding: 0 5px 20px 0;
@@ -50,7 +50,7 @@ export const MenuLogo = styled.div`
 	}
 `;
 
-export const MenuItem = styled.button`
+export const SMenuItem = styled.button`
 	height: 80px;
 	width: calc(100% - 15px);
 	border-radius: 16px 0 0 16px;
@@ -58,12 +58,12 @@ export const MenuItem = styled.button`
 	justify-content: center;
 	align-items: center;
 	position: relative;
-	${MenuItemModifiers.buttonIcon()};
+	${SMenuItemModifiers.buttonIcon()};
 	div {
 		z-index: 1;
 	}
 `;
 
-export const MenuItemLogout = styled.button`
-	${MenuItemModifiers.buttonIcon()};
+export const SMenuItemLogout = styled.button`
+	${SMenuItemModifiers.buttonIcon()};
 `;

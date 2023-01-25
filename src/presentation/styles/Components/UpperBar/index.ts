@@ -1,6 +1,7 @@
+import { theme } from "presentation";
 import styled from "styled-components/macro";
-import { theme } from "../../styles/theme";
-export const Menu = styled.menu`
+
+export const SSideMenu = styled.menu`
 	background-color: ${theme.colors.primaryColor};
 	width: 100vw;
 	height: 70px;

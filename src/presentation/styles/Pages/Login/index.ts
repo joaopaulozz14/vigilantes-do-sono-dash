@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 
-export const Container = styled.section`
+export const SLoginContainer = styled.section`
 	width: 400px;
 	height: 440px;
 	border-radius: 50px;
