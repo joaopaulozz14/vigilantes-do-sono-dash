@@ -1,6 +1,7 @@
+import { theme } from "presentation";
 import styled from "styled-components/macro";
-import { theme } from "../theme";
-export const Container = styled.section`
+
+export const SHomeContainer = styled.section`
 	min-width: 100vw;
 	min-height: 100vh;
 	background-color: ${theme.colors.baseBg1Dark};
@@ -10,6 +11,6 @@ export const Container = styled.section`
 	justify-content: space-between;
 `;
 
-export const HomeContent = styled.main`
+export const SHomeContent = styled.main`
 	width: calc(100% - 450px);
 `;
