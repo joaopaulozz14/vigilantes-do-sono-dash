@@ -1,7 +1,6 @@
 import { IClientJSON } from "@types";
 import { Providers, Router } from "main";
 import { GlobalStyle } from "presentation";
-import "./App.css";
 
 const jsonData: IClientJSON = {};
 
