@@ -9,7 +9,7 @@ import {
 	SSideMenu,
 } from "presentation";
 
-const SideBar = (): JSX.Element => {
+export const SideBar = (): JSX.Element => {
 	return (
 		<SSideMenu>
 			<nav>
@@ -36,5 +36,3 @@ const SideBar = (): JSX.Element => {
 		</SSideMenu>
 	);
 };
-
-export default SideBar;

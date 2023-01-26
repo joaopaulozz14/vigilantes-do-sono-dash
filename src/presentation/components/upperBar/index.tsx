@@ -1,6 +1,6 @@
 import { SSideMenu } from "presentation";
 
-const UpperBar = (): JSX.Element => {
+export const UpperBar = (): JSX.Element => {
 	return (
 		<SSideMenu>
 			<aside className="container">
@@ -13,5 +13,3 @@ const UpperBar = (): JSX.Element => {
 		</SSideMenu>
 	);
 };
-
-export default UpperBar;

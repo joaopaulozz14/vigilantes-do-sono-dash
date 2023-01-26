@@ -1,6 +1,4 @@
-import UpperBar from "../../components/upperBar/index";
-import SideBar from "../../components/sideBar/index";
-import { SHomeContainer } from "presentation";
+import { SHomeContainer, SideBar, UpperBar } from "presentation";
 
 const Home = (): JSX.Element => {
 	return (
