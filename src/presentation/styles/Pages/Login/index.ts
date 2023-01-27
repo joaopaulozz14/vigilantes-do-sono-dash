@@ -1,47 +1,15 @@
 import styled from "styled-components/macro";
+//import { theme } from "presentation/styles/System";
 
-export const SLoginContainer = styled.section`
-	width: 400px;
-	height: 440px;
-	border-radius: 50px;
-	background: #fff;
-	box-shadow: 24px 24px 48px rgba(174, 210, 236, 0.4),
-		inset 12px 12px 24px #e7f2f9, inset -24px -24px 48px #b8d8ee;
-	.h2 {
-		margin-top: 40px;
-		font-size: 36px;
-		text-align: center;
-		font-weight: 700;
-		color: #3e90d0;
-	}
-	.input {
-		width: 100%;
-		padding: 12px 20px;
-		margin-top: 20px;
-		border: none;
-		outline: none;
-		background: #6facdc;
-		color: #fff;
-		border-radius: 40px;
-		box-shadow: 0px 4px 24px #b5d6ee, inset 6px 6px 12px #63a5d9,
-			inset -12px -12px 24px #3e90d0;
-	}
-	.btn {
-		text-align: center;
-		width: 100px;
-		font-weight: 600;
-		transition: 0.2s ease-out;
-	}
-	.btn:hover {
-		cursor: pointer;
-		box-shadow: 0px 4px 24px #b5d6ee, inset 6px 6px 12px #5b7c96,
-			inset -12px -12px 24px #3e90d0;
-	}
-	.container p {
-		text-align: center;
-		color: #3e90d0;
-	}
-	.container a {
-		color: #1166a7;
-	}
+export const SLogin = styled.section`
+	height: 100vh;
+	width: 100vw;
+	background-color: #1f202b;
+`;
+export const SLoginContainer = styled.main`
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 `;

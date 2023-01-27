@@ -1,4 +1,4 @@
-import { theme } from "presentation";
+import { theme } from "../../System/theme";
 import styled from "styled-components/macro";
 
 export const SHomeContainer = styled.section`
@@ -6,9 +6,12 @@ export const SHomeContainer = styled.section`
 	min-height: 100vh;
 	background-color: ${theme.colors.baseBg1Dark};
 	color: ${theme.colors.baseBg1Light};
-	font-family: ${theme.constants.FontFamily};
+	font-family: ${theme.constants.FontFamilyAlternative};
 	display: flex;
 	justify-content: space-between;
+	p {
+		font-size: 20px;
+	}
 `;
 
 export const SHomeContent = styled.main`

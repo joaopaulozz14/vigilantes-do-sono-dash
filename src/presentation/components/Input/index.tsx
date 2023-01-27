@@ -4,7 +4,6 @@ import { Blind, Values } from "presentation/styles/Components/Input";
 interface InputType {
 	label: string;
 	type: string;
-	placeholder: string;
 	value: React.Dispatch<React.SetStateAction<string>>;
 	step?: number;
 	max?: number;
@@ -13,7 +12,6 @@ interface InputType {
 
 const Input = ({
 	label,
-	placeholder,
 	type,
 	value,
 	step,
@@ -30,7 +28,6 @@ const Input = ({
 					<input
 						id={`${label}_${type}_input`}
 						name={label}
-						placeholder={placeholder}
 						title={`Choose ${label}`}
 						type={type}
 						onChange={(e): void => {
@@ -51,7 +48,6 @@ const Input = ({
 					<input
 						id={`${label}_${type}_input`}
 						name={label}
-						placeholder={placeholder}
 						title={`Choose ${label}`}
 						type={blind ? `password` : `text`}
 						onChange={(e): void => {
@@ -74,7 +70,6 @@ const Input = ({
 					<input
 						id={`${label}_${type}_input`}
 						name={label}
-						placeholder={placeholder}
 						title={`Choose ${label}`}
 						type={type}
 						onChange={(e): void => {

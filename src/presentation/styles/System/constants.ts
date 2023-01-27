@@ -2,6 +2,7 @@ import { ICssConstants } from "@types";
 
 export const constants: ICssConstants = {
 	FontFamily: "Audiowide",
+	FontFamilyAlternative: "Montserrat",
 };
 
 // const size: IDevicesSize = {

@@ -1,4 +1,4 @@
-import { theme } from "presentation";
+import { theme } from "presentation/styles/System";
 import styled, {
 	css,
 	FlattenSimpleInterpolation,

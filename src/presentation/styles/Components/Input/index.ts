@@ -11,13 +11,12 @@ export const Values = styled.div`
 	gap: 0.5em;
 	font-size: 8px;
 	label {
-		text-transform: capitalize;
-		font-size: 1.5em;
+		font-size: 14px;
 		margin-bottom: 0.7em;
-		color: ${theme.colors.primaryColor};
+		color: ${theme.colors.baseLine};
 	}
 	input {
-		height: 2em;
+		height: 35px;
 		margin-bottom: 0.7em;
 		background: ${theme.colors.baseBg2Dark};
 		color: gray;

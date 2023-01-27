@@ -29,10 +29,12 @@ export const GlobalStyle: GlobalStyleComponent<
 *{
 	margin: 0;
 	padding: 0;
+	border: 0;
+	outline: 0;
 }
 
 html, body {
-		height: 100vh;
+		//height: 100vh;
 		box-sizing: border-box;
 		font-family: ${theme.constants.FontFamily};
 		font-weight: 400;
