@@ -10,6 +10,16 @@ export const SBoxLogin = styled.section`
 	border-radius: 8px;
 	font-size: 16px;
 	font-family: ${theme.constants.FontFamilyAlternative};
+	form {
+		//border: 1px solid green;
+		margin-top: 30px;
+	}
+	a {
+		color: #4c0099;
+	}
+	a:hover {
+		color: #6600cc;
+	}
 `;
 
 export const SBoxLoginLogo = styled.div`
@@ -24,4 +34,13 @@ export const SBoxLoginLogo = styled.div`
 	img {
 		height: 70px;
 	}
+`;
+
+export const SBoxLoginButton = styled.button`
+	width: 100%;
+	height: 35px;
+	background-color: ${theme.colors.secondaryColor};
+	border-radius: 8px;
+	margin: 15px 0;
+	cursor: pointer;
 `;
