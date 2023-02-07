@@ -1,2 +1,3 @@
-export * from "./sideBar";
-export * from "./upperBar";
+export * from "./SideBar";
+export * from "./UpperBar";
+export * from "./charts";
