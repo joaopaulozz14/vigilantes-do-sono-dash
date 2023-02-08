@@ -4,7 +4,7 @@ export interface IChartData {
 	values: number[];
 }
 
-export interface IRating {
-	ratingMedia: string;
+export interface IRatingData {
 	allRatings: number[];
+	ratingMedia: number;
 }

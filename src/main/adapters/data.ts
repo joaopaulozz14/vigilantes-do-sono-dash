@@ -1,6 +1,6 @@
-import { IChartData, IRating } from "@types";
+import { IChartData, IRatingData, IEmployee } from "@types";
 
-export const employee = {
+export const employee: IEmployee = {
 	name: "user",
 	password: "User*123",
 	email: "user@mail.com",
@@ -33,7 +33,7 @@ export const reportedNights = 8692;
 
 export const appliedTechniques = 3678;
 
-export const rating: IRating = {
-	ratingMedia: "4.61",
+export const rating: IRatingData = {
 	allRatings: [165, 235, 486, 728, 638],
+	ratingMedia: 4.61,
 };
