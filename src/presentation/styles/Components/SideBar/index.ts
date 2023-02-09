@@ -33,6 +33,7 @@ export const SSideMenu = styled.menu`
 	//border-radius: 0 0px 16px 0;
 	box-sizing: border-box;
 	background-color: ${theme.colors.primaryColor};
+	position: fixed;
 	nav {
 		display: flex;
 		flex-direction: column;

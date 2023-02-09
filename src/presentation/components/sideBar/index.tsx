@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import logo from "../../assets/images/vigilantes.png";
 import {
 	Home,
@@ -8,8 +9,12 @@ import {
 	SMenuLogo,
 	SSideMenu,
 } from "presentation";
+import { RoutePath } from "@types";
+import { useNavigate } from "react-router-dom";
 
 export const SideBar = (): JSX.Element => {
+	const navigate = useNavigate();
+
 	return (
 		<SSideMenu>
 			<nav>
@@ -19,18 +24,26 @@ export const SideBar = (): JSX.Element => {
 						alt="Logo da empresa Vigilantes do Sono"
 					/>
 				</SMenuLogo>
-				<SMenuItem>
+				<SMenuItem onClick={() => navigate(RoutePath.HOME)}>
 					<div>
 						<Home />
 					</div>
 				</SMenuItem>
-				<SMenuItem>
+				<SMenuItem
+					onClick={() => {
+						navigate(RoutePath.SETTINGS);
+					}}
+				>
 					<div>
 						<Settings />
 					</div>
 				</SMenuItem>
 			</nav>
-			<SMenuItemLogout>
+			<SMenuItemLogout
+				onClick={() => {
+					navigate(RoutePath.LOGIN);
+				}}
+			>
 				<Logout />
 			</SMenuItemLogout>
 		</SSideMenu>
