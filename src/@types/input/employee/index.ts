@@ -1,5 +1,5 @@
 export interface IEmployee {
-	name: string;
+	name?: string;
 	password: string;
 	email: string;
 }

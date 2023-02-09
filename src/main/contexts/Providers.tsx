@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { AuthProvider } from "./AccountContext";
-import { ChartProvider } from "./chartsContext";
+import { ChartProvider } from "./ChartsContext";
 interface ProvidersProps {
 	children: ReactNode;
 }

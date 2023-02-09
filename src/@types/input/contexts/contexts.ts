@@ -1,5 +1,5 @@
 import { Dispatch, ReactNode, SetStateAction } from "react";
-import { IChartData } from "../client_json";
+import { IChartData, IGeneral, IRatingData } from "../client_json";
 
 export interface AllProvidersProps {
 	children: ReactNode;
@@ -27,16 +27,20 @@ export interface CurrentUser {
 }
 
 export interface ChartProviderData {
-	insomnia: IChartData | null;
-	setInsomnia: Dispatch<SetStateAction<IChartData | null>>;
-	depression: IChartData | null;
-	setDepression: Dispatch<SetStateAction<IChartData | null>>;
 	anxiety: IChartData | null;
-	setAnxiety: Dispatch<SetStateAction<IChartData | null>>;
+	depression: IChartData | null;
+	general: IGeneral | null;
+	insomnia: IChartData | null;
 	productivity: IChartData | null;
-	setProductivity: Dispatch<SetStateAction<IChartData | null>>;
+	rating: IRatingData | null;
 	refresh: number;
+	setAnxiety: Dispatch<SetStateAction<IChartData | null>>;
+	setDepression: Dispatch<SetStateAction<IChartData | null>>;
+	setGeneral: Dispatch<SetStateAction<IGeneral | null>>;
+	setInsomnia: Dispatch<SetStateAction<IChartData | null>>;
+	setProductivity: Dispatch<SetStateAction<IChartData | null>>;
+	setRating: Dispatch<SetStateAction<IRatingData | null>>;
 	setRefresh: Dispatch<SetStateAction<number>>;
-	refreshData: () => string | void;
+	refreshData: () => Promise<void>;
 	setRefreshTime: () => void;
 }
