@@ -1,3 +1,3 @@
 export * from "./AccountContext";
-export * from "./ChartsContext";
+export * from "./chartsContext";
 export * from "./Providers";
