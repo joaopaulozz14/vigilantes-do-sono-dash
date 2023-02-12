@@ -1,4 +1,5 @@
 import { Dispatch, ReactNode, SetStateAction } from "react";
+import { IChartOutputDatasets } from "../charts";
 import { IChartData, IGeneral, IRatingData } from "../client_json";
 
 export interface AllProvidersProps {
@@ -27,20 +28,35 @@ export interface CurrentUser {
 }
 
 export interface ChartProviderData {
-	anxiety: IChartData | null;
-	depression: IChartData | null;
-	general: IGeneral | null;
-	insomnia: IChartData | null;
-	productivity: IChartData | null;
-	rating: IRatingData | null;
+	anxiety: IChartData;
+	depression: IChartData;
+	general: IGeneral;
+	generalMedia: IGeneral;
+	lastGeneral: IGeneral;
+	insomnia: IChartData;
+	productivity: IChartData;
+	rating: IRatingData;
 	refresh: number;
-	setAnxiety: Dispatch<SetStateAction<IChartData | null>>;
-	setDepression: Dispatch<SetStateAction<IChartData | null>>;
-	setGeneral: Dispatch<SetStateAction<IGeneral | null>>;
-	setInsomnia: Dispatch<SetStateAction<IChartData | null>>;
-	setProductivity: Dispatch<SetStateAction<IChartData | null>>;
-	setRating: Dispatch<SetStateAction<IRatingData | null>>;
 	setRefresh: Dispatch<SetStateAction<number>>;
 	refreshData: () => Promise<void>;
 	setRefreshTime: () => void;
+}
+
+export interface SortDataChartProviderData {
+	currentGeneralChart: IChartOutputDatasets | undefined;
+}
+
+export interface ChartSwitchersProviderData {
+	switchAnxiety: boolean;
+	switchDepression: boolean;
+	switchGeneral: boolean;
+	switchInsomnia: boolean;
+	switchProductivity: boolean;
+	switchRating: boolean;
+	setSwitchAnxiety: Dispatch<SetStateAction<boolean>>;
+	setSwitchDepression: Dispatch<SetStateAction<boolean>>;
+	setSwitchGeneral: Dispatch<SetStateAction<boolean>>;
+	setSwitchInsomnia: Dispatch<SetStateAction<boolean>>;
+	setSwitchProductivity: Dispatch<SetStateAction<boolean>>;
+	setSwitchRating: Dispatch<SetStateAction<boolean>>;
 }

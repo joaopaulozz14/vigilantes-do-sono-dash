@@ -17,4 +17,11 @@ export const colors: ICssColors = {
 
 	primaryOpacity: "rgba(0, 0, 0, 0.3)",
 	baseLine: "rgba(255, 255, 255, 0.7)",
+
+	primaryBGChartColor: "#ff6384",
+	primaryBorderChartColor: "#ffffff",
+	secondaryBGChartColor: "#4e1d77",
+	secondaryBorderChartColor: "#4bc0c0",
+	thirdBGChartColor: "#35a2eb",
+	thirdBorderChartColor: "#35a2eb00",
 };

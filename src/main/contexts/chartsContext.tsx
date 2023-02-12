@@ -12,7 +12,17 @@ import {
 	useEffect,
 	useState,
 } from "react";
-import { /*ChartServices,*/ gad, isi, phq, prod, Timer } from "main";
+import {
+	/*ChartServices,*/ gad,
+	isi,
+	phq,
+	prod,
+	generalData,
+	lastGeneralData,
+	ratingData,
+	Timer,
+	arithmeticAverage,
+} from "main";
 import { useAuth } from "./AccountContext";
 
 const ChartContext = createContext<ChartProviderData>({} as ChartProviderData);
@@ -20,12 +30,14 @@ const ChartContext = createContext<ChartProviderData>({} as ChartProviderData);
 export const ChartProvider = ({ children }: AllProvidersProps): JSX.Element => {
 	const { logged } = useAuth();
 
-	const [anxiety, setAnxiety] = useState<IChartData | null>(null);
-	const [depression, setDepression] = useState<IChartData | null>(null);
-	const [general, setGeneral] = useState<IGeneral | null>(null);
-	const [insomnia, setInsomnia] = useState<IChartData | null>(null);
-	const [productivity, setProductivity] = useState<IChartData | null>(null);
-	const [rating, setRating] = useState<IRatingData | null>(null);
+	const [anxiety, setAnxiety] = useState<IChartData>(gad);
+	const [depression, setDepression] = useState<IChartData>(phq);
+	const [general, setGeneral] = useState<IGeneral>(generalData);
+	const [generalMedia, setGeneralMedia] = useState<IGeneral>(generalData);
+	const [lastGeneral, setLastGeneral] = useState<IGeneral>(lastGeneralData);
+	const [insomnia, setInsomnia] = useState<IChartData>(isi);
+	const [productivity, setProductivity] = useState<IChartData>(prod);
+	const [rating, setRating] = useState<IRatingData>(ratingData);
 
 	const [refresh, setRefresh] = useState<number>(60);
 	const [gottaRefresh, setGottaRefresh] = useState<number | null>(null);
@@ -51,22 +63,29 @@ export const ChartProvider = ({ children }: AllProvidersProps): JSX.Element => {
 	};
 
 	const refreshData = async (): Promise<void> => {
-		//Dados em memória
-		setAnxiety(isi);
-		setDepression(gad);
-		setGeneral(general);
-		setInsomnia(phq);
-		setProductivity(prod);
-
 		// Dados da API
 		// const charts = new ChartServices();
 		// const currentAnxiety = await charts.anxiety();
 		// const currentDepression = await charts.depression();
 		// const currentGeneral = await charts.general();
+		// const currentLastGeneral = await charts.LastGeneral();
 		// const currentInsomnia = await charts.insomnia();
 		// const currentProductivity = await charts.productivity();
 		// const currentRating = await charts.rating();
 
+		const media = arithmeticAverage(generalData, lastGeneralData);
+
+		//Dados em memória
+		setAnxiety(isi);
+		setDepression(gad);
+		setGeneral(generalData);
+		setGeneralMedia(media);
+		setLastGeneral(lastGeneralData);
+		setInsomnia(phq);
+		setProductivity(prod);
+		setRating(ratingData);
+
+		// Dados da API
 		// setAnxiety(currentAnxiety);
 		// setDepression(currentDepression);
 		// setGeneral(currentGeneral);
@@ -98,15 +117,11 @@ export const ChartProvider = ({ children }: AllProvidersProps): JSX.Element => {
 				anxiety,
 				depression,
 				general,
+				generalMedia,
+				lastGeneral,
 				insomnia,
 				productivity,
 				rating,
-				setAnxiety,
-				setDepression,
-				setGeneral,
-				setInsomnia,
-				setProductivity,
-				setRating,
 				refresh,
 				setRefresh,
 				refreshData,

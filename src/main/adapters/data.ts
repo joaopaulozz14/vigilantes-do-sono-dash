@@ -30,13 +30,18 @@ export const prod: IChartData = {
 	values: [7.8, 3.4],
 };
 
-export const general: IGeneral = {
+export const generalData: IGeneral = {
 	currentSessions: 3168,
 	reportedNights: 8692,
 	appliedTechniques: 3678,
 };
+export const lastGeneralData: IGeneral = {
+	currentSessions: 3075,
+	reportedNights: 7648,
+	appliedTechniques: 3509,
+};
 
-export const rating: IRatingData = {
+export const ratingData: IRatingData = {
 	allRatings: [165, 235, 486, 728, 638],
 	ratingMedia: 4.61,
 };

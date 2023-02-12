@@ -10,4 +10,10 @@ export interface ICssColors {
 	menuItemBtnS: string;
 	primaryOpacity: string;
 	baseLine: string;
+	primaryBGChartColor: string;
+	primaryBorderChartColor: string;
+	secondaryBGChartColor: string;
+	secondaryBorderChartColor: string;
+	thirdBGChartColor: string;
+	thirdBorderChartColor: string;
 }

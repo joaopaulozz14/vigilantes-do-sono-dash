@@ -1,13 +1,7 @@
-import { IClientJSON } from "@types";
 import { Providers, Router } from "main";
 import { GlobalStyle } from "presentation";
 
-const jsonData: IClientJSON = {};
-
 function App(): JSX.Element {
-	if (jsonData) {
-		console.log(jsonData);
-	}
 	return (
 		<div className="App">
 			<Providers>
