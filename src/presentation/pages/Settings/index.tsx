@@ -1,10 +1,10 @@
-import { SideBar } from "presentation/components";
-import { UpperBarSettings } from "presentation/components/upperBarSettings";
 import {
+	SideBar,
+	UpperBarSettings,
 	SSettingsContainerDiv,
 	SSettingsContainer,
 	SSettings,
-} from "presentation/styles/Pages/Settings";
+} from "presentation";
 import logo from "../../assets/images/vigilantes.png";
 
 const Settings = (): JSX.Element => {

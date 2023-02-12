@@ -1,8 +1,4 @@
-import {
-	SBoxLogin,
-	SBoxLoginLogo,
-	SBoxLoginButton,
-} from "presentation/styles/Components/BoxLogin";
+import { SBoxLogin, SBoxLoginLogo, SBoxLoginButton } from "presentation";
 import { useState } from "react";
 import Input from "../Input";
 import logo from "../../assets/images/vigilantes.png";
@@ -10,7 +6,7 @@ import logo from "../../assets/images/vigilantes.png";
 interface BoxLoginProps {
 	onSubmitData: (data: { valueEmail: string; valuePassword: string }) => void;
 }
-const BoxLogin = ({ onSubmitData }: BoxLoginProps): JSX.Element => {
+export const BoxLogin = ({ onSubmitData }: BoxLoginProps): JSX.Element => {
 	const [valueEmail, setValueEmail] = useState("");
 	const [valuePassword, setValuePassword] = useState("");
 
@@ -50,5 +46,3 @@ const BoxLogin = ({ onSubmitData }: BoxLoginProps): JSX.Element => {
 		</SBoxLogin>
 	);
 };
-
-export default BoxLogin;
