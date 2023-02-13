@@ -1,5 +1,14 @@
-import { IChartInputInfo, IChartOutputDatasets } from "@types";
-import { GeneralChart, useChart, useSwichers } from "main";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { IChartData, IChartOutputDatasets, ILineChartData } from "@types";
+import {
+	GeneralChart,
+	useChart,
+	useSwichers,
+	DefaultChart,
+	ProductivityChart,
+	RatingChart,
+} from "main";
+
 import { AllProvidersProps, SortDataChartProviderData } from "@types";
 import { createContext, useContext, useEffect, useState } from "react";
 
@@ -11,106 +20,127 @@ export const SortDataChartProvider = ({
 	children,
 }: AllProvidersProps): JSX.Element => {
 	const {
-		// anxiety,
-		// depression,
+		anxiety,
+		depression,
 		general,
 		generalMedia,
 		lastGeneral,
-		// insomnia,
-		// productivity,
-		// rating,
+		insomnia,
+		productivity,
+		rating,
+
 		refreshData,
 	} = useChart();
 
 	const {
-		// switchAnxiety,
-		// switchDepression,
+		switchAnxiety,
+		switchDepression,
 		switchGeneral,
-		// switchInsomnia,
-		// switchProductivity,
-		// switchRating,
+		switchInsomnia,
+		switchProductivity,
+		switchRating,
 	} = useSwichers();
 
-	// const lineData: IChartInputInfo[] = [
-	// 	{
-	// 		label: "teste label",
-	// 		data: [19, 3, 21],
-	// 		colors: ["#190321", "#c4a323"],
-	// 	},
-	// ];
+	const [currentGeneralChart, setCurrentGeneralChart] =
+		useState<IChartOutputDatasets>({});
+	const [currentAnxietyChart, setCurrentAnxietyChart] =
+		useState<ILineChartData>({});
+	const [currentDepressionChart, setCurrentDepressionChart] =
+		useState<ILineChartData>({});
+	const [currentInsomniaChart, setCurrentInsomniaChart] =
+		useState<ILineChartData>({});
+	const [currentProductivityChart, setCurrentProductivityChart] =
+		useState<IChartOutputDatasets>({});
+	const [currentRatingChart, setCurrentRatingChart] =
+		useState<IChartOutputDatasets>({});
 
-	const [currentGeneralChart, setcurrentGeneralChart] =
-		useState<IChartOutputDatasets>();
-
-	const labels = [
-		"Total de sessões atuais",
-		"Técnicas aplicadas",
-		"Noites Reportadas",
-	];
-
-	const multiData: IChartInputInfo[] = [
-		{
-			label: "Media",
-			colors: ["#b651db", "#7ef8ad"],
-			borderWidth: 2,
-			data: [
-				generalMedia.currentSessions,
-				generalMedia.appliedTechniques,
-				generalMedia.reportedNights,
-			],
-		},
-		{
-			label: "Dados anteriores",
-			colors: ["#060314", "#e9eeca"],
-			data: [
-				lastGeneral.currentSessions,
-				lastGeneral.appliedTechniques,
-				lastGeneral.reportedNights,
-			],
-			borderWidth: 3,
-		},
-		{
-			label: "Dados atuais",
-			colors: ["#08c6df"],
-			data: [
-				general.currentSessions,
-				general.appliedTechniques,
-				general.reportedNights,
-			],
-		},
-	];
-
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/explicit-function-return-type
-	const initGeneral = () => {
-		refreshData();
-		const teste2 = new GeneralChart(labels, multiData);
-		// const view1: ILineChartData = teste.line();
-		const generalChart: IChartOutputDatasets = teste2.create;
-		console.log("Dados do gráfico:");
-		console.log(generalChart);
-		setcurrentGeneralChart(generalChart);
+	// General
+	const initGeneral = (): void => {
+		const generalChart: IChartOutputDatasets = new GeneralChart(
+			general,
+			generalMedia,
+			lastGeneral,
+		).create;
+		setCurrentGeneralChart(generalChart);
 	};
-
-	useEffect(() => {
-		refreshData();
-		initGeneral();
-	}, []);
 	useEffect(() => {
 		refreshData();
 		initGeneral();
 	}, [switchGeneral]);
 
-	// const teste = new ChartData("line", "teste line", labels, lineData);
+	const builderDefault = (data: IChartData): ILineChartData =>
+		new DefaultChart(data).create;
+
+	// Anxiety
+	const initAnxiety = (): void => {
+		const anxietyChart: ILineChartData = builderDefault(anxiety);
+		setCurrentAnxietyChart(anxietyChart);
+	};
+	useEffect(() => {
+		refreshData();
+		initAnxiety();
+	}, [switchAnxiety]);
+
+	// Depression
+	const initDepression = (): void => {
+		const depressionChart: ILineChartData = builderDefault(depression);
+		setCurrentDepressionChart(depressionChart);
+	};
+	useEffect(() => {
+		refreshData();
+		initDepression();
+	}, [switchDepression]);
+
+	// Insomnia
+	const initInsomnia = (): void => {
+		const insomniaChart: ILineChartData = builderDefault(insomnia);
+		setCurrentInsomniaChart(insomniaChart);
+	};
+	useEffect(() => {
+		refreshData();
+		initInsomnia();
+	}, [switchInsomnia]);
+
+	const initProductivity = (): void => {
+		const productivityChart: IChartOutputDatasets = new ProductivityChart(
+			productivity,
+		).create;
+		setCurrentProductivityChart(productivityChart);
+	};
+	useEffect(() => {
+		refreshData();
+		initProductivity();
+	}, [switchProductivity]);
+
+	const initRating = (): void => {
+		const ratingChart: IChartOutputDatasets = new RatingChart(rating)
+			.create;
+		setCurrentRatingChart(ratingChart);
+	};
+	useEffect(() => {
+		refreshData();
+		initRating();
+	}, [switchRating]);
+
+	useEffect(() => {
+		refreshData();
+	}, []);
 
 	return (
 		<SortDataChartContext.Provider
 			value={{
 				currentGeneralChart,
+				currentAnxietyChart,
+				currentInsomniaChart,
+				currentDepressionChart,
+				currentProductivityChart,
+				currentRatingChart,
 			}}
 		>
 			{children}
 		</SortDataChartContext.Provider>
 	);
 };
+
 export const useSortDataChart = (): SortDataChartProviderData =>
 	useContext(SortDataChartContext);

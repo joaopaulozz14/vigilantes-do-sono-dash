@@ -1,5 +1,5 @@
 import { Dispatch, ReactNode, SetStateAction } from "react";
-import { IChartOutputDatasets } from "../charts";
+import { IChartOutputDatasets, ILineChartData } from "../charts";
 import { IChartData, IGeneral, IRatingData } from "../client_json";
 
 export interface AllProvidersProps {
@@ -43,7 +43,12 @@ export interface ChartProviderData {
 }
 
 export interface SortDataChartProviderData {
-	currentGeneralChart: IChartOutputDatasets | undefined;
+	currentGeneralChart: IChartOutputDatasets;
+	currentAnxietyChart: ILineChartData;
+	currentInsomniaChart: ILineChartData;
+	currentDepressionChart: ILineChartData;
+	currentProductivityChart: IChartOutputDatasets;
+	currentRatingChart: IChartOutputDatasets;
 }
 
 export interface ChartSwitchersProviderData {

@@ -65,6 +65,21 @@ export class ChartData {
 					},
 				];
 				return newData;
+			case "rating":
+				const ratings = this._data[0];
+				newData = [];
+				ratings.data.forEach((e: number, i: number): void => {
+					const res = {
+						type: "bar" as const,
+						label: (i + 1).toString(),
+						backgroundColor: this._data[0].colors[0],
+						data: [e],
+						borderColor: this._data[0].colors[1],
+						borderWidth: 2,
+					};
+					newData.push(res);
+				});
+				return newData;
 
 			default:
 				newData = [
@@ -101,12 +116,5 @@ export class ChartData {
 			},
 		};
 		return { data, options };
-	}
-
-	protected line(): ILineChartData {
-		return this.lineWrite();
-	}
-	protected multi(): IChartOutputDatasets {
-		return this.multiWrite();
 	}
 }

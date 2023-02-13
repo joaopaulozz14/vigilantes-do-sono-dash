@@ -15,11 +15,12 @@ export interface IChartInputInfo {
 	data: number[];
 }
 export interface IChartOutputDatasets {
-	labels: string[];
-	datasets: IChartDataParameters[];
+	labels?: string[];
+	datasets?: IChartDataParameters[];
 }
 export interface ILineChartData {
-	data: IChartOutputDatasets;
+	data?: IChartOutputDatasets;
+
 	options?: ILineChartOptions;
 }
 export interface ILineChartOptions {
