@@ -26,7 +26,7 @@ export const UpperBar = (): JSX.Element => {
 						setSwitchGeneral(!switchGeneral);
 					}}
 				>
-					Barra de abrir o gráfico de gerais
+					Barra de abrir o gráfico
 				</div>
 				<div
 					onClick={() => {
