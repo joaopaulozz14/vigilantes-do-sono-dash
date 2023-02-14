@@ -65,3 +65,27 @@ export interface ChartSwitchersProviderData {
 	setSwitchProductivity: Dispatch<SetStateAction<boolean>>;
 	setSwitchRating: Dispatch<SetStateAction<boolean>>;
 }
+
+export interface ColorsProviderData {
+	primaryColor: string;
+	secondaryColor: string;
+	primaryBGColor: string;
+	secondaryBGColor: string;
+	chartLineBGColor: string;
+	chartLineBorderColor: string;
+	chartBarBGPrimaryColor: string;
+	chartBarBorderPrimaryColor: string;
+	chartBarBGSecondaryColor: string;
+	chartBarBorderSecondaryColor: string;
+	setPrimaryColor: Dispatch<SetStateAction<string>>;
+	setSecondaryColor: Dispatch<SetStateAction<string>>;
+	setPrimaryBGColor: Dispatch<SetStateAction<string>>;
+	setSecondaryBGColor: Dispatch<SetStateAction<string>>;
+	setChartLineBGColor: Dispatch<SetStateAction<string>>;
+	setChartLineBorderColor: Dispatch<SetStateAction<string>>;
+	setChartBarBGPrimaryColor: Dispatch<SetStateAction<string>>;
+	setChartBarBorderPrimaryColor: Dispatch<SetStateAction<string>>;
+	setChartBarBGSecondaryColor: Dispatch<SetStateAction<string>>;
+	setChartBarBorderSecondaryColor: Dispatch<SetStateAction<string>>;
+	saveColors: () => void;
+}

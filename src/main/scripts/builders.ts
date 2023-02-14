@@ -13,11 +13,12 @@ export class GeneralChart extends ChartData {
 		general: IGeneral,
 		generalMedia: IGeneral,
 		lastGeneral: IGeneral,
+		colors: string[],
 	) {
 		const multiData: IChartInputInfo[] = [
 			{
 				label: "Media",
-				colors: ["#b651db", "#7ef8ad"],
+				colors: [colors[0]],
 				borderWidth: 2,
 				data: [
 					generalMedia.currentSessions,
@@ -27,7 +28,7 @@ export class GeneralChart extends ChartData {
 			},
 			{
 				label: "Dados anteriores",
-				colors: ["#060314", "#e9eeca"],
+				colors: [colors[1], colors[2]],
 				data: [
 					lastGeneral.currentSessions,
 					lastGeneral.appliedTechniques,
@@ -37,7 +38,7 @@ export class GeneralChart extends ChartData {
 			},
 			{
 				label: "Dados atuais",
-				colors: ["#08c6df"],
+				colors: [colors[3]],
 				data: [
 					general.currentSessions,
 					general.appliedTechniques,
@@ -62,22 +63,22 @@ export class GeneralChart extends ChartData {
 	}
 }
 export class ProductivityChart extends ChartData {
-	constructor(prod: IChartData) {
+	constructor(prod: IChartData, colors: string[]) {
 		const multiData: IChartInputInfo[] = [
 			{
 				label: "",
-				colors: ["#b651db00", "#7ef8ad00"],
+				colors: ["#00000000"],
 				data: [0, 0, 0],
 			},
 			{
 				label: prod.name,
-				colors: ["#a6b314", "#e9aeca"],
+				colors: [colors[0], colors[1]],
 				data: prod.values,
 				borderWidth: 2,
 			},
 			{
 				label: "",
-				colors: ["#08c6df00"],
+				colors: ["#00000000"],
 				data: [0, 0, 0],
 			},
 		];
@@ -95,11 +96,11 @@ export class ProductivityChart extends ChartData {
 }
 
 export class RatingChart extends ChartData {
-	constructor(rating: IRatingData) {
+	constructor(rating: IRatingData, colors: string[]) {
 		const multiData: IChartInputInfo[] = [
 			{
 				label: "Avaliações",
-				colors: ["#060314", "#e9eeca"],
+				colors: [colors[0], colors[1]],
 				data: rating.allRatings,
 				borderWidth: 3,
 			},
@@ -113,12 +114,12 @@ export class RatingChart extends ChartData {
 }
 
 export class DefaultChart extends ChartData {
-	constructor(data: IChartData) {
+	constructor(data: IChartData, colors: string[]) {
 		const multiData: IChartInputInfo[] = [
 			{
 				label: data.name,
 				data: data.values,
-				colors: ["#190321", "#434343"],
+				colors: [colors[0], colors[1]],
 			},
 		];
 

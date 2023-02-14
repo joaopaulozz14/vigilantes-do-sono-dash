@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { useSwichers } from "main";
 import { SUpperBar } from "../../styles/Components/UpperBar";
 
@@ -22,46 +21,46 @@ export const UpperBar = (): JSX.Element => {
 		<SUpperBar>
 			<aside className="container">
 				<div
-					onClick={() => {
+					onClick={(): void => {
 						setSwitchGeneral(!switchGeneral);
 					}}
 				>
-					Barra de abrir o gráfico
+					Dados do App
 				</div>
 				<div
-					onClick={() => {
+					onClick={(): void => {
 						setSwitchAnxiety(!switchAnxiety);
 					}}
 				>
-					Barra de abrir o gráfico de ansiedade
+					Ansiedade
 				</div>
 				<div
-					onClick={() => {
+					onClick={(): void => {
 						setSwitchDepression(!switchDepression);
 					}}
 				>
-					Barra de abrir o gráfico de depressão
+					Depressão
 				</div>
 				<div
-					onClick={() => {
+					onClick={(): void => {
 						setSwitchInsomnia(!switchInsomnia);
 					}}
 				>
-					Barra de abrir o gráfico de insonia
+					Insonia
 				</div>
 				<div
-					onClick={() => {
+					onClick={(): void => {
 						setSwitchProductivity(!switchProductivity);
 					}}
 				>
-					Barra de abrir o gráfico de produtividade
+					Produtividade
 				</div>
 				<div
-					onClick={() => {
+					onClick={(): void => {
 						setSwitchRating(!switchRating);
 					}}
 				>
-					Barra de abrir o gráfico de avaliações
+					Avaliações
 				</div>
 			</aside>
 		</SUpperBar>
