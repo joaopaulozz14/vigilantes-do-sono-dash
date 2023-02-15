@@ -1,6 +1,10 @@
 import { useSortDataChart, useSwichers } from "main";
 import { ChartLine, MultiChart } from "presentation";
-import { SCharts } from "presentation/styles/Components/AllCharts";
+import {
+	SCharts,
+	SChartsContent,
+} from "presentation/styles/Components/AllCharts";
+import { useState } from "react";
 
 export const AllCharts = (): JSX.Element => {
 	const {
@@ -22,43 +26,43 @@ export const AllCharts = (): JSX.Element => {
 	return (
 		<SCharts>
 			{currentGeneralChart && switchGeneral && (
-				<div>
+				<SChartsContent>
 					<MultiChart data={currentGeneralChart} />
-				</div>
+				</SChartsContent>
 			)}
 			{currentAnxietyChart && switchAnxiety && (
-				<div>
+				<SChartsContent>
 					<ChartLine
 						options={currentAnxietyChart.options}
 						data={currentAnxietyChart.data}
 					/>
-				</div>
+				</SChartsContent>
 			)}
 			{currentDepressionChart && switchDepression && (
-				<div>
+				<SChartsContent>
 					<ChartLine
 						options={currentDepressionChart.options}
 						data={currentDepressionChart.data}
 					/>
-				</div>
+				</SChartsContent>
 			)}
 			{currentInsomniaChart && switchInsomnia && (
-				<div>
+				<SChartsContent>
 					<ChartLine
 						options={currentInsomniaChart.options}
 						data={currentInsomniaChart.data}
 					/>
-				</div>
+				</SChartsContent>
 			)}
 			{currentProductivityChart && switchProductivity && (
-				<div>
+				<SChartsContent>
 					<MultiChart data={currentProductivityChart} />
-				</div>
+				</SChartsContent>
 			)}
 			{currentRatingChart && switchRating && (
-				<div>
+				<SChartsContent>
 					<MultiChart data={currentRatingChart} />
-				</div>
+				</SChartsContent>
 			)}
 		</SCharts>
 	);

@@ -1,5 +1,5 @@
 import { useSwichers } from "main";
-import { SUpperBar } from "../../styles/Components/UpperBar";
+import { SUpperBar, SUpperBarButton } from "../../styles/Components/UpperBar";
 
 export const UpperBar = (): JSX.Element => {
 	const {
@@ -17,51 +17,67 @@ export const UpperBar = (): JSX.Element => {
 		setSwitchRating,
 	} = useSwichers();
 
+	// Essa constante deve vir do context de cores
+	const primaryColor = "#5e9bf8";
+
 	return (
 		<SUpperBar>
 			<aside className="container">
-				<div
+
+				<SUpperBarButton
+					isActive={switchGeneral}
+					isActiveColor={primaryColor}
 					onClick={(): void => {
 						setSwitchGeneral(!switchGeneral);
 					}}
 				>
-					Dados do App
-				</div>
-				<div
+					APP
+				</SUpperBarButton>
+				<SUpperBarButton
+					isActive={switchAnxiety}
+					isActiveColor={primaryColor}
 					onClick={(): void => {
 						setSwitchAnxiety(!switchAnxiety);
 					}}
 				>
-					Ansiedade
-				</div>
-				<div
+					GAD
+				</SUpperBarButton>
+				<SUpperBarButton
+					isActive={switchDepression}
+					isActiveColor={primaryColor}
 					onClick={(): void => {
 						setSwitchDepression(!switchDepression);
 					}}
 				>
-					Depressão
-				</div>
-				<div
+					PHQ
+				</SUpperBarButton>
+				<SUpperBarButton
+					isActive={switchInsomnia}
+					isActiveColor={primaryColor}
 					onClick={(): void => {
 						setSwitchInsomnia(!switchInsomnia);
 					}}
 				>
-					Insonia
-				</div>
-				<div
+					ISI
+				</SUpperBarButton>
+				<SUpperBarButton
+					isActive={switchProductivity}
+					isActiveColor={primaryColor}
 					onClick={(): void => {
 						setSwitchProductivity(!switchProductivity);
 					}}
 				>
 					Produtividade
-				</div>
-				<div
+				</SUpperBarButton>
+				<SUpperBarButton
+					isActive={switchRating}
+					isActiveColor={primaryColor}
 					onClick={(): void => {
 						setSwitchRating(!switchRating);
 					}}
 				>
 					Avaliações
-				</div>
+				</SUpperBarButton>
 			</aside>
 		</SUpperBar>
 	);
