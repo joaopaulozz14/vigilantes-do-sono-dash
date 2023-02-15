@@ -27,10 +27,13 @@ export const AllCharts = (): JSX.Element => {
 		<SCharts>
 			{currentGeneralChart && switchGeneral && (
 				<SChartsContent>
+					{/*tentar construir esse título para as divs*/}
 					<SHeaderCharts>
-						<h2>TÃ­tulo</h2>
-						<button>PDF</button>
-						<button>X</button>
+						<h2>Titulo</h2>
+						<div>
+							<button>PDF</button>
+							<button>X</button>
+						</div>
 					</SHeaderCharts>
 					<MultiChart data={currentGeneralChart} />
 				</SChartsContent>

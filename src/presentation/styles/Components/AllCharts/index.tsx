@@ -48,8 +48,17 @@ export const SHeaderCharts = styled.div`
 	display: flex;
 	justify-content: space-between;
 	color: ${theme.colors.primaryBorderChartColor};
+	align-items: center;
+	div {
+		width: 25%;
+		height: 25px;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
 	h2,
 	button {
+		align-items: center;
 		font-family: ${theme.constants.FontFamily};
 	}
 `;
