@@ -26,45 +26,45 @@ export const AllCharts = (): JSX.Element => {
 	} = useSwichers();
 	return (
 		<SCharts>
-			<SChartsContent>
-				{currentGeneralChart && switchGeneral && (
+			{currentGeneralChart && switchGeneral && (
+				<SChartsContent>
 					<MultiChart data={currentGeneralChart} />
-				)}
-			</SChartsContent>
-			<SChartsContent>
-				{currentAnxietyChart && switchAnxiety && (
+				</SChartsContent>
+			)}
+			{currentAnxietyChart && switchAnxiety && (
+				<SChartsContent>
 					<ChartLine
 						options={currentAnxietyChart.options}
 						data={currentAnxietyChart.data}
 					/>
-				)}
-			</SChartsContent>
-			<SChartsContent>
-				{currentDepressionChart && switchDepression && (
+				</SChartsContent>
+			)}
+			{currentDepressionChart && switchDepression && (
+				<SChartsContent>
 					<ChartLine
 						options={currentDepressionChart.options}
 						data={currentDepressionChart.data}
 					/>
-				)}
-			</SChartsContent>
-			<SChartsContent>
-				{currentInsomniaChart && switchInsomnia && (
+				</SChartsContent>
+			)}
+			{currentInsomniaChart && switchInsomnia && (
+				<SChartsContent>
 					<ChartLine
 						options={currentInsomniaChart.options}
 						data={currentInsomniaChart.data}
 					/>
-				)}
-			</SChartsContent>
-			<SChartsContent>
-				{currentProductivityChart && switchProductivity && (
+				</SChartsContent>
+			)}
+			{currentProductivityChart && switchProductivity && (
+				<SChartsContent>
 					<MultiChart data={currentProductivityChart} />
-				)}
-			</SChartsContent>
-			<SChartsContent>
-				{currentRatingChart && switchRating && (
+				</SChartsContent>
+			)}
+			{currentRatingChart && switchRating && (
+				<SChartsContent>
 					<MultiChart data={currentRatingChart} />
-				)}
-			</SChartsContent>
+				</SChartsContent>
+			)}
 		</SCharts>
 	);
 };

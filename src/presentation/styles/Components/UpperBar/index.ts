@@ -1,12 +1,16 @@
 import { theme } from "presentation/styles/System";
-import styled from "styled-components/macro";
+import styled, { css, Interpolation } from "styled-components/macro";
+
+export interface IMenuSelectorProps {
+	isActive: boolean;
+	isActiveColor: string;
+}
 
 export const SUpperBar = styled.menu`
 	background-color: ${theme.colors.primaryColor};
 	width: 100%;
 	height: 70px;
 	margin-left: 105px;
-	//border: 1px solid red;
 	display: flex;
 	align-items: center;
 	justify-content: start;
@@ -14,10 +18,8 @@ export const SUpperBar = styled.menu`
 	z-index: 1;
 	.container {
 		width: 60%;
-		//margin: 0 auto;
 		display: flex;
 		justify-content: space-between;
-		//margin-left: 0px;
 
 		@media (min-width: 200px) {
 			margin-left: 60px;
@@ -29,19 +31,6 @@ export const SUpperBar = styled.menu`
 		@media (min-width: 1600px) {
 			margin-left: 300px;
 		}
-	}
-	div {
-		width: 70px;
-		height: 30px;
-		border: 1px solid white;
-		border-radius: 8px;
-		cursor: pointer;
-	}
-	.active {
-		background-color: red;
-	}
-	.ola {
-		background-color: green;
 	}
 `;
 
@@ -60,14 +49,34 @@ export const SUpperBarButton = styled.div<MenuItemStyled>`
 	`}
 `; */
 
-export const SUpperBarButton = styled.div`
-	height: 80px;
-	width: calc(100% - 15px);
-	border-radius: 16px 0 0 16px;
+export const SUpperBarButton = styled.div<IMenuSelectorProps>`
+	width: 70px;
+	height: 30px;
+	border-radius: 8px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin-left: 15px;
 	position: relative;
+	cursor: pointer;
+	${({ isActive, isActiveColor }): Interpolation<IMenuSelectorProps> => {
+		return (
+			!isActive &&
+			css`
+				box-shadow: inset 0 0 5px 1px ${isActiveColor}77,
+					0 0 5px 1px ${isActiveColor}77;
+				background-color: ${isActiveColor}33;
+			`
+		);
+	}}
+	${({ isActive, isActiveColor }): Interpolation<IMenuSelectorProps> => {
+		return (
+			isActive &&
+			css`
+				box-shadow: inset 0 0 10px 1px ${isActiveColor}ee,
+					0 0 10px 1px ${isActiveColor}ee;
+				background-color: ${isActiveColor}aa;
+			`
+		);
+	}}
 `;
-//${active && MenuItemModifiers.active(theme)}

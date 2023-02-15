@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { useSwichers } from "main";
-import { useState } from "react";
+// import { useState } from "react";
 import { SUpperBar, SUpperBarButton } from "../../styles/Components/UpperBar";
 
 export const UpperBar = (): JSX.Element => {
@@ -19,66 +18,60 @@ export const UpperBar = (): JSX.Element => {
 		setSwitchRating,
 	} = useSwichers();
 
-	const [active, setActive] = useState("");
+	const primaryColor = "#5e9bf8";
 
-	const handleActive = event => {
-		setActive(event.target.id);
-		console.log(active);
-
-		return;
-	};
 	return (
 		<SUpperBar>
 			<aside className="container">
 				<SUpperBarButton
-					id={"1"}
-					key={1}
-					onClick={() => {
-						handleActive;
-						console.log("123");
+					isActive={switchGeneral}
+					isActiveColor={primaryColor}
+					onClick={(): void => {
 						setSwitchGeneral(!switchGeneral);
 					}}
-					className={active === "1" ? "active" : undefined}
 				>
 					Barra de abrir o gráfico
 				</SUpperBarButton>
 				<SUpperBarButton
-					className="ola"
-					onClick={() => {
-						handleActive;
+					isActive={switchAnxiety}
+					isActiveColor={primaryColor}
+					onClick={(): void => {
 						setSwitchAnxiety(!switchAnxiety);
 					}}
 				>
 					Barra de abrir o gráfico de ansiedade
 				</SUpperBarButton>
 				<SUpperBarButton
-					className={"3"}
-					onClick={() => {
-						handleActive;
+					isActive={switchDepression}
+					isActiveColor={primaryColor}
+					onClick={(): void => {
 						setSwitchDepression(!switchDepression);
 					}}
 				>
 					Barra de abrir o gráfico de depressão
 				</SUpperBarButton>
 				<SUpperBarButton
-					className={"4"}
-					onClick={() => {
+					isActive={switchInsomnia}
+					isActiveColor={primaryColor}
+					onClick={(): void => {
 						setSwitchInsomnia(!switchInsomnia);
 					}}
 				>
 					Barra de abrir o gráfico de insonia
 				</SUpperBarButton>
 				<SUpperBarButton
-					className={"5"}
-					onClick={() => {
+					isActive={switchProductivity}
+					isActiveColor={primaryColor}
+					onClick={(): void => {
 						setSwitchProductivity(!switchProductivity);
 					}}
 				>
 					Barra de abrir o gráfico de produtividade
 				</SUpperBarButton>
 				<SUpperBarButton
-					className={"6"}
-					onClick={() => {
+					isActive={switchRating}
+					isActiveColor={primaryColor}
+					onClick={(): void => {
 						setSwitchRating(!switchRating);
 					}}
 				>
