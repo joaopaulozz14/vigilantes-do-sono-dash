@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { useSwichers } from "main";
-import { SUpperBar } from "../../styles/Components/UpperBar";
+import { useState } from "react";
+import { SUpperBar, SUpperBarButton } from "../../styles/Components/UpperBar";
 
 export const UpperBar = (): JSX.Element => {
 	const {
@@ -18,51 +19,71 @@ export const UpperBar = (): JSX.Element => {
 		setSwitchRating,
 	} = useSwichers();
 
+	const [active, setActive] = useState("");
+
+	const handleActive = event => {
+		setActive(event.target.id);
+		console.log(active);
+
+		return;
+	};
 	return (
 		<SUpperBar>
 			<aside className="container">
-				<div
+				<SUpperBarButton
+					id={"1"}
+					key={1}
 					onClick={() => {
+						handleActive;
+						console.log("123");
 						setSwitchGeneral(!switchGeneral);
 					}}
+					className={active === "1" ? "active" : undefined}
 				>
 					Barra de abrir o gráfico
-				</div>
-				<div
+				</SUpperBarButton>
+				<SUpperBarButton
+					className="ola"
 					onClick={() => {
+						handleActive;
 						setSwitchAnxiety(!switchAnxiety);
 					}}
 				>
 					Barra de abrir o gráfico de ansiedade
-				</div>
-				<div
+				</SUpperBarButton>
+				<SUpperBarButton
+					className={"3"}
 					onClick={() => {
+						handleActive;
 						setSwitchDepression(!switchDepression);
 					}}
 				>
 					Barra de abrir o gráfico de depressão
-				</div>
-				<div
+				</SUpperBarButton>
+				<SUpperBarButton
+					className={"4"}
 					onClick={() => {
 						setSwitchInsomnia(!switchInsomnia);
 					}}
 				>
 					Barra de abrir o gráfico de insonia
-				</div>
-				<div
+				</SUpperBarButton>
+				<SUpperBarButton
+					className={"5"}
 					onClick={() => {
 						setSwitchProductivity(!switchProductivity);
 					}}
 				>
 					Barra de abrir o gráfico de produtividade
-				</div>
-				<div
+				</SUpperBarButton>
+				<SUpperBarButton
+					className={"6"}
 					onClick={() => {
 						setSwitchRating(!switchRating);
 					}}
 				>
 					Barra de abrir o gráfico de avaliações
-				</div>
+				</SUpperBarButton>
 			</aside>
 		</SUpperBar>
 	);

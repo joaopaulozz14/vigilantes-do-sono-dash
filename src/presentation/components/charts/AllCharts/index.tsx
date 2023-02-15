@@ -1,7 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useSortDataChart, useSwichers } from "main";
 import { ChartLine, MultiChart } from "presentation";
-import { SCharts } from "presentation/styles/Components/AllCharts";
+import {
+	SCharts,
+	SChartsContent,
+} from "presentation/styles/Components/AllCharts";
 import { useState } from "react";
 
 export const AllCharts = (): JSX.Element => {
@@ -23,45 +26,45 @@ export const AllCharts = (): JSX.Element => {
 	} = useSwichers();
 	return (
 		<SCharts>
-			<div>
+			<SChartsContent>
 				{currentGeneralChart && switchGeneral && (
 					<MultiChart data={currentGeneralChart} />
 				)}
-			</div>
-			<div>
+			</SChartsContent>
+			<SChartsContent>
 				{currentAnxietyChart && switchAnxiety && (
 					<ChartLine
 						options={currentAnxietyChart.options}
 						data={currentAnxietyChart.data}
 					/>
 				)}
-			</div>
-			<div>
+			</SChartsContent>
+			<SChartsContent>
 				{currentDepressionChart && switchDepression && (
 					<ChartLine
 						options={currentDepressionChart.options}
 						data={currentDepressionChart.data}
 					/>
 				)}
-			</div>
-			<div>
+			</SChartsContent>
+			<SChartsContent>
 				{currentInsomniaChart && switchInsomnia && (
 					<ChartLine
 						options={currentInsomniaChart.options}
 						data={currentInsomniaChart.data}
 					/>
 				)}
-			</div>
-			<div>
+			</SChartsContent>
+			<SChartsContent>
 				{currentProductivityChart && switchProductivity && (
 					<MultiChart data={currentProductivityChart} />
 				)}
-			</div>
-			<div>
+			</SChartsContent>
+			<SChartsContent>
 				{currentRatingChart && switchRating && (
 					<MultiChart data={currentRatingChart} />
 				)}
-			</div>
+			</SChartsContent>
 		</SCharts>
 	);
 };
