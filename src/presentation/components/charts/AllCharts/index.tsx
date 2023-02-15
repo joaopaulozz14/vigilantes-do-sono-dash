@@ -1,8 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useSortDataChart, useSwichers } from "main";
 import { ChartLine, MultiChart } from "presentation";
 import { SCharts } from "presentation/styles/Components/AllCharts";
-import { useState } from "react";
 
 export const AllCharts = (): JSX.Element => {
 	const {

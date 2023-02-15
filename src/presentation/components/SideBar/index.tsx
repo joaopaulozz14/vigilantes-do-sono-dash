@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import logo from "../../assets/images/vigilantes.png";
 import {
 	Home,
@@ -24,13 +23,13 @@ export const SideBar = (): JSX.Element => {
 						alt="Logo da empresa Vigilantes do Sono"
 					/>
 				</SMenuLogo>
-				<SMenuItem onClick={() => navigate(RoutePath.HOME)}>
+				<SMenuItem onClick={(): void => navigate(RoutePath.HOME)}>
 					<div>
 						<Home />
 					</div>
 				</SMenuItem>
 				<SMenuItem
-					onClick={() => {
+					onClick={(): void => {
 						navigate(RoutePath.SETTINGS);
 					}}
 				>
@@ -40,7 +39,7 @@ export const SideBar = (): JSX.Element => {
 				</SMenuItem>
 			</nav>
 			<SMenuItemLogout
-				onClick={() => {
+				onClick={(): void => {
 					navigate(RoutePath.LOGIN);
 				}}
 			>

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { IChartData, IChartOutputDatasets, ILineChartData } from "@types";
 import {
 	GeneralChart,
@@ -29,7 +28,6 @@ export const SortDataChartProvider = ({
 		insomnia,
 		productivity,
 		rating,
-
 		refreshData,
 	} = useChart();
 
@@ -117,6 +115,7 @@ export const SortDataChartProvider = ({
 		initInsomnia();
 	}, [switchInsomnia]);
 
+	// Productivity
 	const initProductivity = (): void => {
 		const productivityChart: IChartOutputDatasets = new ProductivityChart(
 			productivity,
@@ -133,6 +132,7 @@ export const SortDataChartProvider = ({
 		initProductivity();
 	}, [switchProductivity]);
 
+	// Rating
 	const initRating = (): void => {
 		const ratingChart: IChartOutputDatasets = new RatingChart(rating, [
 			chartBarBorderPrimaryColor,
