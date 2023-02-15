@@ -1,5 +1,4 @@
 import { useSwichers } from "main";
-// import { useState } from "react";
 import { SUpperBar, SUpperBarButton } from "../../styles/Components/UpperBar";
 
 export const UpperBar = (): JSX.Element => {
@@ -18,6 +17,7 @@ export const UpperBar = (): JSX.Element => {
 		setSwitchRating,
 	} = useSwichers();
 
+	// Essa constante deve vir do context de cores
 	const primaryColor = "#5e9bf8";
 
 	return (
@@ -30,7 +30,7 @@ export const UpperBar = (): JSX.Element => {
 						setSwitchGeneral(!switchGeneral);
 					}}
 				>
-					Barra de abrir o gráfico
+					APP
 				</SUpperBarButton>
 				<SUpperBarButton
 					isActive={switchAnxiety}
@@ -39,7 +39,7 @@ export const UpperBar = (): JSX.Element => {
 						setSwitchAnxiety(!switchAnxiety);
 					}}
 				>
-					Barra de abrir o gráfico de ansiedade
+					GAD
 				</SUpperBarButton>
 				<SUpperBarButton
 					isActive={switchDepression}
@@ -48,7 +48,7 @@ export const UpperBar = (): JSX.Element => {
 						setSwitchDepression(!switchDepression);
 					}}
 				>
-					Barra de abrir o gráfico de depressão
+					PHQ
 				</SUpperBarButton>
 				<SUpperBarButton
 					isActive={switchInsomnia}
@@ -57,7 +57,7 @@ export const UpperBar = (): JSX.Element => {
 						setSwitchInsomnia(!switchInsomnia);
 					}}
 				>
-					Barra de abrir o gráfico de insonia
+					ISI
 				</SUpperBarButton>
 				<SUpperBarButton
 					isActive={switchProductivity}
@@ -66,7 +66,7 @@ export const UpperBar = (): JSX.Element => {
 						setSwitchProductivity(!switchProductivity);
 					}}
 				>
-					Barra de abrir o gráfico de produtividade
+					Produtividade
 				</SUpperBarButton>
 				<SUpperBarButton
 					isActive={switchRating}
@@ -75,7 +75,7 @@ export const UpperBar = (): JSX.Element => {
 						setSwitchRating(!switchRating);
 					}}
 				>
-					Barra de abrir o gráfico de avaliações
+					Avaliações
 				</SUpperBarButton>
 			</aside>
 		</SUpperBar>

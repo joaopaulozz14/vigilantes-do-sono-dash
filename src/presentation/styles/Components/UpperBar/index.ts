@@ -50,10 +50,12 @@ export const SUpperBarButton = styled.div<MenuItemStyled>`
 `; */
 
 export const SUpperBarButton = styled.div<IMenuSelectorProps>`
-	width: 70px;
-	height: 30px;
+	width: 100px;
+	height: 40px;
 	border-radius: 8px;
 	display: flex;
+	color: ${theme.colors.contrast1};
+	font-size: 14px;
 	justify-content: center;
 	align-items: center;
 	margin-left: 15px;
@@ -73,7 +75,7 @@ export const SUpperBarButton = styled.div<IMenuSelectorProps>`
 		return (
 			isActive &&
 			css`
-				box-shadow: inset 0 0 10px 1px ${isActiveColor}ee,
+				box-shadow: inset 0 0 10px 5px ${isActiveColor},
 					0 0 10px 1px ${isActiveColor}ee;
 				background-color: ${isActiveColor}aa;
 			`
