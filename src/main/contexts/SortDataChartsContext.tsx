@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { IChartData, IChartOutputDatasets, ILineChartData } from "@types";
 import {
 	GeneralChart,
@@ -7,6 +6,7 @@ import {
 	DefaultChart,
 	ProductivityChart,
 	RatingChart,
+	useColors,
 } from "main";
 
 import { AllProvidersProps, SortDataChartProviderData } from "@types";
@@ -28,7 +28,6 @@ export const SortDataChartProvider = ({
 		insomnia,
 		productivity,
 		rating,
-
 		refreshData,
 	} = useChart();
 
@@ -40,6 +39,15 @@ export const SortDataChartProvider = ({
 		switchProductivity,
 		switchRating,
 	} = useSwichers();
+
+	const {
+		chartLineBGColor,
+		chartLineBorderColor,
+		chartBarBGPrimaryColor,
+		chartBarBorderPrimaryColor,
+		chartBarBGSecondaryColor,
+		chartBarBorderSecondaryColor,
+	} = useColors();
 
 	const [currentGeneralChart, setCurrentGeneralChart] =
 		useState<IChartOutputDatasets>({});
@@ -60,6 +68,12 @@ export const SortDataChartProvider = ({
 			general,
 			generalMedia,
 			lastGeneral,
+			[
+				chartLineBorderColor,
+				chartBarBorderSecondaryColor,
+				chartBarBGSecondaryColor,
+				chartBarBGPrimaryColor,
+			],
 		).create;
 		setCurrentGeneralChart(generalChart);
 	};
@@ -69,7 +83,7 @@ export const SortDataChartProvider = ({
 	}, [switchGeneral]);
 
 	const builderDefault = (data: IChartData): ILineChartData =>
-		new DefaultChart(data).create;
+		new DefaultChart(data, [chartLineBorderColor, chartLineBGColor]).create;
 
 	// Anxiety
 	const initAnxiety = (): void => {
@@ -101,9 +115,15 @@ export const SortDataChartProvider = ({
 		initInsomnia();
 	}, [switchInsomnia]);
 
+	// Productivity
 	const initProductivity = (): void => {
 		const productivityChart: IChartOutputDatasets = new ProductivityChart(
 			productivity,
+			[
+				chartBarBorderPrimaryColor,
+				chartBarBGPrimaryColor,
+				chartBarBGSecondaryColor,
+			],
 		).create;
 		setCurrentProductivityChart(productivityChart);
 	};
@@ -112,9 +132,12 @@ export const SortDataChartProvider = ({
 		initProductivity();
 	}, [switchProductivity]);
 
+	// Rating
 	const initRating = (): void => {
-		const ratingChart: IChartOutputDatasets = new RatingChart(rating)
-			.create;
+		const ratingChart: IChartOutputDatasets = new RatingChart(rating, [
+			chartBarBorderPrimaryColor,
+			chartBarBGPrimaryColor,
+		]).create;
 		setCurrentRatingChart(ratingChart);
 	};
 	useEffect(() => {
