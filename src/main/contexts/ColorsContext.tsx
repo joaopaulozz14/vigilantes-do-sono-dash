@@ -8,36 +8,24 @@ const ColorsContext = createContext<ColorsProviderData>(
 export const ColorsProvider = ({
 	children,
 }: AllProvidersProps): JSX.Element => {
-	const [primaryBGColor, setPrimaryBGColor] = useState(
-		theme.colors.baseBg1Dark,
-	);
-	const [secondaryBGColor, setSecondaryBGColor] = useState(
-		theme.colors.baseBg2Dark,
-	);
+	const [primaryBGColor, setPrimaryBGColor] = useState("#0f0925");
+	const [secondaryBGColor, setSecondaryBGColor] = useState("#423869");
 
-	const [primaryColor, setPrimaryColor] = useState(theme.colors.primaryColor);
-	const [secondaryColor, setSecondaryColor] = useState(
-		theme.colors.secondaryColor,
-	);
+	const [primaryColor, setPrimaryColor] = useState("#7acdf3");
+	const [secondaryColor, setSecondaryColor] = useState("#190321");
 
-	const [chartLineBGColor, setChartLineBGColor] = useState(
-		theme.colors.primaryBGChartColor,
-	);
-	const [chartLineBorderColor, setChartLineBorderColor] = useState(
-		theme.colors.primaryBorderChartColor,
-	);
+	const [chartLineBGColor, setChartLineBGColor] = useState("#6cffeb");
+	const [chartLineBorderColor, setChartLineBorderColor] = useState("#bbb7d1");
 
-	const [chartBarBGPrimaryColor, setChartBarBGPrimaryColor] = useState(
-		theme.colors.secondaryBGChartColor,
-	);
+	const [chartBarBGPrimaryColor, setChartBarBGPrimaryColor] =
+		useState("#b1f89f");
 	const [chartBarBorderPrimaryColor, setChartBarBorderPrimaryColor] =
-		useState(theme.colors.secondaryBorderChartColor);
+		useState("#a9fde8");
 
-	const [chartBarBGSecondaryColor, setChartBarBGSecondaryColor] = useState(
-		theme.colors.thirdBGChartColor,
-	);
+	const [chartBarBGSecondaryColor, setChartBarBGSecondaryColor] =
+		useState("#92f3e3");
 	const [chartBarBorderSecondaryColor, setChartBarBorderSecondaryColor] =
-		useState(theme.colors.thirdBorderChartColor);
+		useState("#00b7ff");
 
 	const saveColors = (): void => {
 		const colors: IMutableColors = {
