@@ -23,7 +23,6 @@ export const UpperBar = (): JSX.Element => {
 	return (
 		<SUpperBar>
 			<aside className="container">
-
 				<SUpperBarButton
 					isActive={switchGeneral}
 					isActiveColor={primaryColor}
