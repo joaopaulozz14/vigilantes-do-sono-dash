@@ -5,6 +5,5 @@ export const SHomeContainer = styled.div`
 	width: 100%;
 	position: absolute;
 	background-color: #1f202b;
-	//background-color: white;
 	display: flex;
 `;

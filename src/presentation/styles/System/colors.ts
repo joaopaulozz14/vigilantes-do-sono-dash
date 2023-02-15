@@ -22,6 +22,6 @@ export const colors: ICssColors = {
 	primaryBorderChartColor: "#ffffff",
 	secondaryBGChartColor: "#4e1d77",
 	secondaryBorderChartColor: "#4bc0c0",
-	thirdBGChartColor: "#35a2eb",
-	thirdBorderChartColor: "#35a2eb00",
+	thirdBGChartColor: "#65b5fd",
+	thirdBorderChartColor: "#35a2eb",
 };

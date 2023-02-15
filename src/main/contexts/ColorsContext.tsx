@@ -1,4 +1,5 @@
 import { AllProvidersProps, ColorsProviderData, IMutableColors } from "@types";
+import { theme } from "presentation";
 import { createContext, useContext, useEffect, useState } from "react";
 
 const ColorsContext = createContext<ColorsProviderData>(
