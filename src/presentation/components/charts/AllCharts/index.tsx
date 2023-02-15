@@ -4,7 +4,6 @@ import {
 	SCharts,
 	SChartsContent,
 } from "presentation/styles/Components/AllCharts";
-import { useState } from "react";
 
 export const AllCharts = (): JSX.Element => {
 	const {
