@@ -77,12 +77,12 @@ export const ChartProvider = ({ children }: AllProvidersProps): JSX.Element => {
 		const media = arithmeticAverage(generalData, lastGeneralData);
 
 		//Dados em memória
-		setAnxiety(isi);
-		setDepression(gad);
+		setAnxiety(gad);
+		setDepression(phq);
 		setGeneral(generalData);
 		setGeneralMedia(media);
 		setLastGeneral(lastGeneralData);
-		setInsomnia(phq);
+		setInsomnia(isi);
 		setProductivity(prod);
 		setRating(ratingData);
 
