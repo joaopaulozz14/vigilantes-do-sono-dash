@@ -31,6 +31,7 @@ export const SChartsContent = styled.div`
 	height: 300px;
 	width: 500px;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	margin: 0 10px;
 	border-bottom-left-radius: 14px;
@@ -40,4 +41,15 @@ export const SChartsContent = styled.div`
 		${theme.colors.primaryColor}99 -15px 15px,
 		${theme.colors.primaryColor}77 -20px 20px,
 		${theme.colors.primaryColor}55 -25px 25px;
+`;
+
+export const SHeaderCharts = styled.div`
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	color: ${theme.colors.primaryBorderChartColor};
+	h2,
+	button {
+		font-family: ${theme.constants.FontFamily};
+	}
 `;

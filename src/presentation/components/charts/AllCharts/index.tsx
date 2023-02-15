@@ -3,6 +3,7 @@ import { ChartLine, MultiChart } from "presentation";
 import {
 	SCharts,
 	SChartsContent,
+	SHeaderCharts,
 } from "presentation/styles/Components/AllCharts";
 
 export const AllCharts = (): JSX.Element => {
@@ -26,6 +27,11 @@ export const AllCharts = (): JSX.Element => {
 		<SCharts>
 			{currentGeneralChart && switchGeneral && (
 				<SChartsContent>
+					<SHeaderCharts>
+						<h2>TÃ­tulo</h2>
+						<button>PDF</button>
+						<button>X</button>
+					</SHeaderCharts>
 					<MultiChart data={currentGeneralChart} />
 				</SChartsContent>
 			)}
