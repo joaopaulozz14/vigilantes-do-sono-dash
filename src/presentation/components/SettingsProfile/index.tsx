@@ -3,7 +3,7 @@ import {
 	SSettingsFormProfile,
 	SSettingsInputProfile,
 } from "presentation";
-import logo from "../../assets/images/profile.png";
+import logo from "../../assets/images/Profile.png";
 export const SettingsProfile = (): JSX.Element => {
 	return (
 		<SSettingsContainerProfile>
