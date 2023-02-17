@@ -19,7 +19,7 @@ export const Values = styled.div`
 		height: 35px;
 		margin-bottom: 0.7em;
 		background: ${theme.colors.baseBg2Dark};
-		color: ${theme.colors.baseLine};
+		color: ${theme.colors.primaryColor};
 		border: none;
 		border-radius: 0.5em;
 		padding-left: 1em;
