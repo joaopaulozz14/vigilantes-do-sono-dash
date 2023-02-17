@@ -66,7 +66,10 @@ export const SHeaderCharts = styled.div`
 	h2,
 	button {
 		align-items: center;
+		background-color: #383642;
 		font-family: ${theme.constants.FontFamily};
 		cursor: pointer;
+		margin: 15px 10px 10px 40px;
+		color: white;
 	}
 `;
