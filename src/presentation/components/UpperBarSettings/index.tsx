@@ -28,7 +28,7 @@ export const UpperBarSettings = (): JSX.Element => {
 				>
 					Visuais
 				</SUpperBarButton>
-				<SUpperBarButton
+				{/* <SUpperBarButton
 					isActive={isActive === SettingsTab.DATA}
 					isActiveColor={buttonsPrimaryColor}
 					onClick={(): void => {
@@ -36,7 +36,7 @@ export const UpperBarSettings = (): JSX.Element => {
 					}}
 				>
 					Dados
-				</SUpperBarButton>
+				</SUpperBarButton> */}
 			</aside>
 		</SUpperBarSettings>
 	);
