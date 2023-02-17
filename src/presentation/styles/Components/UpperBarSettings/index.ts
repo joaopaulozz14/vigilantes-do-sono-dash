@@ -7,12 +7,11 @@ export const SUpperBarSettings = styled.menu`
 	height: 70px;
 	display: flex;
 	align-items: center;
-	margin-left: 105px;
+	justify-content: center;
 	position: fixed;
 	.container {
-		margin: 0 auto;
+		margin-left: 100px;
 		display: flex;
-		gap: 30px;
-		justify-content: space-around;
+		justify-content: center;
 	}
 `;

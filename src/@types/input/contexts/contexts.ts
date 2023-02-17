@@ -67,6 +67,7 @@ export interface ChartSwitchersProviderData {
 }
 
 export interface ColorsProviderData {
+	buttonsPrimaryColor: string;
 	primaryColor: string;
 	secondaryColor: string;
 	primaryBGColor: string;
@@ -77,6 +78,7 @@ export interface ColorsProviderData {
 	chartBarBorderPrimaryColor: string;
 	chartBarBGSecondaryColor: string;
 	chartBarBorderSecondaryColor: string;
+	setButtonsPrimaryColor: Dispatch<SetStateAction<string>>;
 	setPrimaryColor: Dispatch<SetStateAction<string>>;
 	setSecondaryColor: Dispatch<SetStateAction<string>>;
 	setPrimaryBGColor: Dispatch<SetStateAction<string>>;
@@ -88,4 +90,9 @@ export interface ColorsProviderData {
 	setChartBarBGSecondaryColor: Dispatch<SetStateAction<string>>;
 	setChartBarBorderSecondaryColor: Dispatch<SetStateAction<string>>;
 	saveColors: () => void;
+}
+
+export interface SettingsProviderData {
+	setIsActive: Dispatch<SetStateAction<string>>;
+	isActive: string;
 }
