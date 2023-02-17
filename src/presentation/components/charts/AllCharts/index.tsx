@@ -1,4 +1,4 @@
-import { useSortDataChart, useSwichers } from "main";
+import { useColors, useSortDataChart, useSwichers } from "main";
 import { ChartLine, MultiChart } from "presentation";
 import {
 	SCharts,
@@ -22,24 +22,58 @@ export const AllCharts = (): JSX.Element => {
 		switchInsomnia,
 		switchProductivity,
 		switchRating,
+		setSwitchAnxiety,
+		setSwitchDepression,
+		setSwitchGeneral,
+		setSwitchInsomnia,
+		setSwitchProductivity,
+		setSwitchRating,
 	} = useSwichers();
+
+	const { primaryColor, secondaryBGColor } = useColors();
 	return (
 		<SCharts>
 			{currentGeneralChart && switchGeneral && (
-				<SChartsContent>
+				<SChartsContent
+					primaryColor={primaryColor}
+					backgroundColor={secondaryBGColor}
+				>
 					{/*tentar construir esse título para as divs*/}
 					<SHeaderCharts>
-						<h2>Titulo</h2>
+						<h2>Dados do App</h2>
+
 						<div>
 							<button>PDF</button>
-							<button>X</button>
+							<button
+								onClick={(): void => {
+									return setSwitchGeneral(!switchGeneral);
+								}}
+							>
+								X
+							</button>
 						</div>
 					</SHeaderCharts>
 					<MultiChart data={currentGeneralChart} />
 				</SChartsContent>
 			)}
 			{currentAnxietyChart && switchAnxiety && (
-				<SChartsContent>
+				<SChartsContent
+					primaryColor={primaryColor}
+					backgroundColor={secondaryBGColor}
+				>
+					<SHeaderCharts>
+						<h2></h2>
+						<div>
+							<button>PDF</button>
+							<button
+								onClick={(): void => {
+									setSwitchAnxiety(!switchAnxiety);
+								}}
+							>
+								X
+							</button>
+						</div>
+					</SHeaderCharts>
 					<ChartLine
 						options={currentAnxietyChart.options}
 						data={currentAnxietyChart.data}
@@ -47,7 +81,23 @@ export const AllCharts = (): JSX.Element => {
 				</SChartsContent>
 			)}
 			{currentDepressionChart && switchDepression && (
-				<SChartsContent>
+				<SChartsContent
+					primaryColor={primaryColor}
+					backgroundColor={secondaryBGColor}
+				>
+					<SHeaderCharts>
+						<h2></h2>
+						<div>
+							<button>PDF</button>
+							<button
+								onClick={(): void => {
+									setSwitchDepression(!switchDepression);
+								}}
+							>
+								X
+							</button>
+						</div>
+					</SHeaderCharts>
 					<ChartLine
 						options={currentDepressionChart.options}
 						data={currentDepressionChart.data}
@@ -55,7 +105,23 @@ export const AllCharts = (): JSX.Element => {
 				</SChartsContent>
 			)}
 			{currentInsomniaChart && switchInsomnia && (
-				<SChartsContent>
+				<SChartsContent
+					primaryColor={primaryColor}
+					backgroundColor={secondaryBGColor}
+				>
+					<SHeaderCharts>
+						<h2></h2>
+						<div>
+							<button>PDF</button>
+							<button
+								onClick={(): void => {
+									setSwitchInsomnia(!switchInsomnia);
+								}}
+							>
+								X
+							</button>
+						</div>
+					</SHeaderCharts>
 					<ChartLine
 						options={currentInsomniaChart.options}
 						data={currentInsomniaChart.data}
@@ -63,12 +129,44 @@ export const AllCharts = (): JSX.Element => {
 				</SChartsContent>
 			)}
 			{currentProductivityChart && switchProductivity && (
-				<SChartsContent>
+				<SChartsContent
+					primaryColor={primaryColor}
+					backgroundColor={secondaryBGColor}
+				>
+					<SHeaderCharts>
+						<h2></h2>
+						<div>
+							<button>PDF</button>
+							<button
+								onClick={(): void => {
+									setSwitchProductivity(!switchProductivity);
+								}}
+							>
+								X
+							</button>
+						</div>
+					</SHeaderCharts>
 					<MultiChart data={currentProductivityChart} />
 				</SChartsContent>
 			)}
 			{currentRatingChart && switchRating && (
-				<SChartsContent>
+				<SChartsContent
+					primaryColor={primaryColor}
+					backgroundColor={secondaryBGColor}
+				>
+					<SHeaderCharts>
+						<h2>Avaliações</h2>
+						<div>
+							<button>PDF</button>
+							<button
+								onClick={(): void => {
+									setSwitchRating(!switchRating);
+								}}
+							>
+								X
+							</button>
+						</div>
+					</SHeaderCharts>
 					<MultiChart data={currentRatingChart} />
 				</SChartsContent>
 			)}

@@ -15,4 +15,5 @@ export interface IMutableColors {
 	chartBarBorderPrimaryColor: string;
 	chartBarBGSecondaryColor: string;
 	chartBarBorderSecondaryColor: string;
+	buttonsPrimaryColor: string;
 }

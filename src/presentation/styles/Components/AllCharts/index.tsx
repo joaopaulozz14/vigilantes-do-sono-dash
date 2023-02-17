@@ -1,12 +1,16 @@
 import { theme } from "../../System";
-import styled from "styled-components/macro";
+import styled, { css, Interpolation } from "styled-components/macro";
 
+export interface colorsProps {
+	primaryColor: string;
+	backgroundColor: string;
+}
 export const SCharts = styled.div`
-	min-height: 100vh;
+	//min-height: 100vh;
 	width: 100%;
-	padding: 100px 0 100px 0;
+	padding: 100px 0 10px 0;
 	display: flex;
-	gap: 50px;
+	gap: 25px;
 	flex-direction: row;
 	flex-wrap: wrap;
 	align-items: flex-start;
@@ -27,7 +31,7 @@ export const SCharts = styled.div`
 	}
 `;
 
-export const SChartsContent = styled.div`
+export const SChartsContent = styled.div<colorsProps>`
 	height: 300px;
 	width: 500px;
 	display: flex;
@@ -35,12 +39,14 @@ export const SChartsContent = styled.div`
 	align-items: center;
 	margin: 0 10px;
 	border-bottom-left-radius: 14px;
-	background-color: ${theme.colors.primaryColor}22;
-	box-shadow: ${theme.colors.primaryColor}dd -5px 5px,
-		${theme.colors.primaryColor}bb -10px 10px,
-		${theme.colors.primaryColor}99 -15px 15px,
-		${theme.colors.primaryColor}77 -20px 20px,
-		${theme.colors.primaryColor}55 -25px 25px;
+	${({ primaryColor, backgroundColor }): Interpolation<colorsProps> => {
+		return css`
+			background-color: ${backgroundColor}22;
+			box-shadow: ${primaryColor}dd -5px 5px, ${primaryColor}bb -10px 10px,
+				${primaryColor}99 -15px 15px, ${primaryColor}77 -20px 20px,
+				${primaryColor}55 -25px 25px;
+		`;
+	}}
 `;
 
 export const SHeaderCharts = styled.div`
@@ -48,6 +54,7 @@ export const SHeaderCharts = styled.div`
 	display: flex;
 	justify-content: space-between;
 	color: ${theme.colors.primaryBorderChartColor};
+
 	align-items: center;
 	div {
 		width: 25%;
@@ -60,5 +67,6 @@ export const SHeaderCharts = styled.div`
 	button {
 		align-items: center;
 		font-family: ${theme.constants.FontFamily};
+		cursor: pointer;
 	}
 `;

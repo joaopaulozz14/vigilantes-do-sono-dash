@@ -1,4 +1,4 @@
-import { useSwichers } from "main";
+import { useColors, useSwichers } from "main";
 import { SUpperBar, SUpperBarButton } from "../../styles/Components/UpperBar";
 
 export const UpperBar = (): JSX.Element => {
@@ -17,15 +17,14 @@ export const UpperBar = (): JSX.Element => {
 		setSwitchRating,
 	} = useSwichers();
 
-	// Essa constante deve vir do context de cores
-	const primaryColor = "#5e9bf8";
+	const { buttonsPrimaryColor } = useColors();
 
 	return (
 		<SUpperBar>
 			<aside className="container">
 				<SUpperBarButton
 					isActive={switchGeneral}
-					isActiveColor={primaryColor}
+					isActiveColor={buttonsPrimaryColor}
 					onClick={(): void => {
 						setSwitchGeneral(!switchGeneral);
 					}}
@@ -34,7 +33,7 @@ export const UpperBar = (): JSX.Element => {
 				</SUpperBarButton>
 				<SUpperBarButton
 					isActive={switchAnxiety}
-					isActiveColor={primaryColor}
+					isActiveColor={buttonsPrimaryColor}
 					onClick={(): void => {
 						setSwitchAnxiety(!switchAnxiety);
 					}}
@@ -43,7 +42,7 @@ export const UpperBar = (): JSX.Element => {
 				</SUpperBarButton>
 				<SUpperBarButton
 					isActive={switchDepression}
-					isActiveColor={primaryColor}
+					isActiveColor={buttonsPrimaryColor}
 					onClick={(): void => {
 						setSwitchDepression(!switchDepression);
 					}}
@@ -52,7 +51,7 @@ export const UpperBar = (): JSX.Element => {
 				</SUpperBarButton>
 				<SUpperBarButton
 					isActive={switchInsomnia}
-					isActiveColor={primaryColor}
+					isActiveColor={buttonsPrimaryColor}
 					onClick={(): void => {
 						setSwitchInsomnia(!switchInsomnia);
 					}}
@@ -61,7 +60,7 @@ export const UpperBar = (): JSX.Element => {
 				</SUpperBarButton>
 				<SUpperBarButton
 					isActive={switchProductivity}
-					isActiveColor={primaryColor}
+					isActiveColor={buttonsPrimaryColor}
 					onClick={(): void => {
 						setSwitchProductivity(!switchProductivity);
 					}}
@@ -70,7 +69,7 @@ export const UpperBar = (): JSX.Element => {
 				</SUpperBarButton>
 				<SUpperBarButton
 					isActive={switchRating}
-					isActiveColor={primaryColor}
+					isActiveColor={buttonsPrimaryColor}
 					onClick={(): void => {
 						setSwitchRating(!switchRating);
 					}}

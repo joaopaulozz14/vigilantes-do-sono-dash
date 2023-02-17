@@ -38,6 +38,10 @@ export const ColorsProvider = ({
 	);
 	const [chartBarBorderSecondaryColor, setChartBarBorderSecondaryColor] =
 		useState(theme.colors.thirdBorderChartColor);
+
+	const [buttonsPrimaryColor, setButtonsPrimaryColor] = useState(
+		theme.colors.menuItemBtnS,
+	);
 	const saveColors = (): void => {
 		const colors: IMutableColors = {
 			primaryColor,
@@ -50,6 +54,7 @@ export const ColorsProvider = ({
 			chartBarBorderPrimaryColor,
 			chartBarBGSecondaryColor,
 			chartBarBorderSecondaryColor,
+			buttonsPrimaryColor,
 		};
 		localStorage.setItem("colors", JSON.stringify(colors));
 	};
@@ -72,6 +77,7 @@ export const ColorsProvider = ({
 			setChartBarBorderSecondaryColor(
 				colors.chartBarBorderSecondaryColor,
 			);
+			setButtonsPrimaryColor(colors.buttonsPrimaryColor);
 		}
 	};
 
@@ -82,6 +88,7 @@ export const ColorsProvider = ({
 	return (
 		<ColorsContext.Provider
 			value={{
+				buttonsPrimaryColor,
 				primaryColor,
 				secondaryColor,
 				primaryBGColor,
@@ -92,6 +99,7 @@ export const ColorsProvider = ({
 				chartBarBorderPrimaryColor,
 				chartBarBGSecondaryColor,
 				chartBarBorderSecondaryColor,
+				setButtonsPrimaryColor,
 				setPrimaryColor,
 				setSecondaryColor,
 				setPrimaryBGColor,

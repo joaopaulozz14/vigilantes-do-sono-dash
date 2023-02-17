@@ -2,7 +2,7 @@ import { ICssColors } from "@types";
 
 export const colors: ICssColors = {
 	baseBg1Dark: "#212021",
-	baseBg2Dark: "#313131",
+	baseBg2Dark: "#DBBFDB",
 
 	baseBg1Light: "#f1f1f1",
 	baseBg2Light: "#d2d2d2",
@@ -13,7 +13,7 @@ export const colors: ICssColors = {
 	primaryColor: "#0B1320",
 	secondaryColor: "#ffff55",
 
-	menuItemBtnS: "#2C2531",
+	menuItemBtnS: "#5e9bf8",
 
 	primaryOpacity: "rgba(0, 0, 0, 0.3)",
 	baseLine: "rgba(255, 255, 255, 0.7)",
