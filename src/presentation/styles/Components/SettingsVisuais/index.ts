@@ -1,4 +1,5 @@
 import styled, { css, Interpolation } from "styled-components/macro";
+import { theme } from "presentation/styles/System";
 
 interface colorProps {
 	primaryColor: string;
@@ -27,6 +28,11 @@ export const SSettingsContainerVisuais = styled.div`
 	label {
 		font-size: 12px;
 		margin: 0 5px;
+	}
+	.buttonSave {
+		padding: 10px;
+		background-color: ${theme.colors.secondaryColor};
+		border-radius: 8px;
 	}
 `;
 export const SSettingsFormVisuais = styled.form<colorProps>`

@@ -1,28 +1,34 @@
 import {
 	SSettingsContainerVisuais,
 	SSettingsFormVisuais,
-	SSettingsFormVisuaisTheme,
+	//SSettingsFormVisuaisTheme,
 	SSettingsInputVisuais,
 } from "presentation";
 import { useColors } from "main";
-import { useState } from "react";
-import sun from "../../assets/images/sunny.png";
-import moon from "../../assets/images/moon.png";
+//import { useState } from "react";
+/* import sun from "../../assets/images/sunny.png";
+import moon from "../../assets/images/moon.png"; */
 export const SettingsVisuais = (): JSX.Element => {
 	const {
 		primaryColor,
 		chartBarBGPrimaryColor,
+		chartBarBorderPrimaryColor,
 		chartBarBGSecondaryColor,
+		chartBarBorderSecondaryColor,
 		chartLineBGColor,
+		chartLineBorderColor,
 		secondaryBGColor,
+		setChartLineBorderColor,
+		setChartBarBGPrimaryColor,
+		setChartBarBorderPrimaryColor,
+		setChartBarBGSecondaryColor,
+		setChartLineBGColor,
+		setChartBarBorderSecondaryColor,
+		//setSecondaryBGColor,
+		//setPrimaryColor,
+		saveColors,
 	} = useColors();
 
-	const [firstColor, setFirstColor] = useState(chartBarBGPrimaryColor);
-	const [secondaryColor, setSecondaryColor] = useState(
-		chartBarBGSecondaryColor,
-	);
-	const [lineColor, setLineColor] = useState(chartLineBGColor);
-	const [thirdColor, setThirdColor] = useState(secondaryBGColor);
 	return (
 		<SSettingsContainerVisuais>
 			<SSettingsFormVisuais
@@ -33,56 +39,87 @@ export const SettingsVisuais = (): JSX.Element => {
 			>
 				<h1>Personalize as cores dos gráficos</h1>
 				<div>
-					<label htmlFor="firstColor">First Color:</label>
+					<label htmlFor="firstColor">Chart Line:</label>
 					<SSettingsInputVisuais
 						type="color"
 						id="firstColor"
 						name="firstColor"
-						value={firstColor}
+						value={chartLineBGColor}
 						onChange={(e): void => {
-							setFirstColor(e.target.value);
+							setChartLineBGColor(e.target.value);
 						}}
 					/>
 				</div>
 				<div>
-					<label htmlFor="secondColor">Second Color:</label>
+					<label htmlFor="secondColor">Chart Border:</label>
 					<SSettingsInputVisuais
 						id="secondColor"
 						name="secondColor"
 						type="color"
-						value={secondaryColor}
+						value={chartLineBorderColor}
 						onChange={(e): void => {
-							setSecondaryColor(e.target.value);
+							setChartLineBorderColor(e.target.value);
 						}}
 					/>
 				</div>
 				<div>
-					<label htmlFor="thirdColor">Third Color:</label>
+					<label htmlFor="thirdColor">Primary Color</label>
 					<SSettingsInputVisuais
 						id="thirdColor"
 						name="thirdColor"
 						type="color"
-						value={thirdColor}
+						value={chartBarBGPrimaryColor}
 						onChange={(e): void => {
-							setThirdColor(e.target.value);
+							setChartBarBGPrimaryColor(e.target.value);
 						}}
 					/>
 				</div>
 
 				<div>
-					<label htmlFor="lineColor">Line Color:</label>
+					<label htmlFor="lineColor">Primary Bar:</label>
 					<SSettingsInputVisuais
 						id="lineColor"
 						name="lineColor"
 						type="color"
-						value={lineColor}
+						value={chartBarBorderPrimaryColor}
 						onChange={(e): void => {
-							setLineColor(e.target.value);
+							setChartBarBorderPrimaryColor(e.target.value);
 						}}
 					/>
 				</div>
+				<div>
+					<label htmlFor="lineColor">Secondary Color:</label>
+					<SSettingsInputVisuais
+						id="lineColor"
+						name="lineColor"
+						type="color"
+						value={chartBarBGSecondaryColor}
+						onChange={(e): void => {
+							setChartBarBGSecondaryColor(e.target.value);
+						}}
+					/>
+				</div>
+				<div>
+					<label htmlFor="lineColor">Secondary Bar:</label>
+					<SSettingsInputVisuais
+						id="lineColor"
+						name="lineColor"
+						type="color"
+						value={chartBarBorderSecondaryColor}
+						onChange={(e): void => {
+							setChartBarBorderSecondaryColor(e.target.value);
+						}}
+					/>
+				</div>
+				<button
+					onClick={saveColors}
+					className="buttonSave"
+				>
+					save
+				</button>
 			</SSettingsFormVisuais>
-			<SSettingsFormVisuaisTheme
+
+			{/* <SSettingsFormVisuaisTheme
 				action=""
 				primaryColor={primaryColor}
 				backgroundColor={secondaryBGColor}
@@ -117,7 +154,7 @@ export const SettingsVisuais = (): JSX.Element => {
 						/>
 					</label>
 				</div>
-			</SSettingsFormVisuaisTheme>
+			</SSettingsFormVisuaisTheme> */}
 		</SSettingsContainerVisuais>
 	);
 };

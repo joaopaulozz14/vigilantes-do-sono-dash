@@ -40,10 +40,8 @@ export const AllCharts = (): JSX.Element => {
 				>
 					{/*tentar construir esse título para as divs*/}
 					<SHeaderCharts>
-						<h2>Dados do App</h2>
-
+						<h2></h2>
 						<div>
-							<button>PDF</button>
 							<button
 								onClick={(): void => {
 									return setSwitchGeneral(!switchGeneral);
@@ -64,7 +62,6 @@ export const AllCharts = (): JSX.Element => {
 					<SHeaderCharts>
 						<h2></h2>
 						<div>
-							<button>PDF</button>
 							<button
 								onClick={(): void => {
 									setSwitchAnxiety(!switchAnxiety);
@@ -88,7 +85,6 @@ export const AllCharts = (): JSX.Element => {
 					<SHeaderCharts>
 						<h2></h2>
 						<div>
-							<button>PDF</button>
 							<button
 								onClick={(): void => {
 									setSwitchDepression(!switchDepression);
@@ -112,7 +108,6 @@ export const AllCharts = (): JSX.Element => {
 					<SHeaderCharts>
 						<h2></h2>
 						<div>
-							<button>PDF</button>
 							<button
 								onClick={(): void => {
 									setSwitchInsomnia(!switchInsomnia);
@@ -136,7 +131,6 @@ export const AllCharts = (): JSX.Element => {
 					<SHeaderCharts>
 						<h2></h2>
 						<div>
-							<button>PDF</button>
 							<button
 								onClick={(): void => {
 									setSwitchProductivity(!switchProductivity);
@@ -155,9 +149,8 @@ export const AllCharts = (): JSX.Element => {
 					backgroundColor={secondaryBGColor}
 				>
 					<SHeaderCharts>
-						<h2>Avaliações</h2>
+						<h2></h2>
 						<div>
-							<button>PDF</button>
 							<button
 								onClick={(): void => {
 									setSwitchRating(!switchRating);
