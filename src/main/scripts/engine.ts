@@ -23,7 +23,7 @@ export class ChartData {
 		this._data = data;
 		this._title = title;
 	}
-
+	//Essas funções são métodos adicionados ao constructor;
 	private fillData(): IChartDataParameters[] {
 		let newData: IChartDataParameters[];
 		switch (this._type) {

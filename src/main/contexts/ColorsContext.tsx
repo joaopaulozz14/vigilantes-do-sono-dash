@@ -42,6 +42,10 @@ export const ColorsProvider = ({
 	const [buttonsPrimaryColor, setButtonsPrimaryColor] = useState(
 		theme.colors.menuItemBtnS,
 	);
+
+	const [activeBG, setActiveBG] = useState("#1f202b");
+	const [activeColor, setActiveColor] = useState(true);
+
 	const saveColors = (): void => {
 		const colors: IMutableColors = {
 			primaryColor,
@@ -80,6 +84,7 @@ export const ColorsProvider = ({
 			setButtonsPrimaryColor(colors.buttonsPrimaryColor);
 		}
 	};
+	///Quando a aplicação é fechada o applyColors faz o get do localStorage e seta nas cores novamente.
 
 	useEffect(() => {
 		applyColors();
@@ -88,6 +93,8 @@ export const ColorsProvider = ({
 	return (
 		<ColorsContext.Provider
 			value={{
+				activeBG,
+				activeColor,
 				buttonsPrimaryColor,
 				primaryColor,
 				secondaryColor,
@@ -99,6 +106,8 @@ export const ColorsProvider = ({
 				chartBarBorderPrimaryColor,
 				chartBarBGSecondaryColor,
 				chartBarBorderSecondaryColor,
+				setActiveBG,
+				setActiveColor,
 				setButtonsPrimaryColor,
 				setPrimaryColor,
 				setSecondaryColor,

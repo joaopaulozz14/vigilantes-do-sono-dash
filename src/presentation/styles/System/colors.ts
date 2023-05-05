@@ -1,7 +1,7 @@
 import { ICssColors } from "@types";
 
 export const colors: ICssColors = {
-	baseBg1Dark: "#212021",
+	baseBg1Dark: "#1f202b",
 	baseBg2Dark: "#DBBFDB",
 
 	baseBg1Light: "#f1f1f1",

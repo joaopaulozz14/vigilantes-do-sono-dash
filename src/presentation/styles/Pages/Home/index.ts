@@ -1,9 +1,17 @@
-import styled from "styled-components/macro";
+import styled, { css, Interpolation } from "styled-components/macro";
 
-export const SHomeContainer = styled.div`
+export interface colorsHome {
+	baseBG1Dark: string;
+}
+
+export const SHomeContainer = styled.div<colorsHome>`
 	min-height: 100vh;
 	width: 100%;
 	position: absolute;
-	background-color: #1f202b;
 	display: flex;
+	${({ baseBG1Dark }): Interpolation<colorsHome> => {
+		return css`
+			background-color: ${baseBG1Dark};
+		`;
+	}}
 `;

@@ -16,7 +16,11 @@ export const SUpperBar = styled.menu`
 	justify-content: start;
 	position: fixed;
 	z-index: 1;
-	.container {
+	.draggable.dragging {
+		opacity: 0.5;
+		cursor: move;
+	}
+	#container-aside {
 		width: 60%;
 		display: flex;
 		justify-content: space-between;
@@ -60,7 +64,8 @@ export const SUpperBarButton = styled.div<IMenuSelectorProps>`
 	align-items: center;
 	margin-left: 15px;
 	position: relative;
-	cursor: pointer;
+	//cursor: pointer;
+
 	${({ isActive, isActiveColor }): Interpolation<IMenuSelectorProps> => {
 		return (
 			!isActive &&

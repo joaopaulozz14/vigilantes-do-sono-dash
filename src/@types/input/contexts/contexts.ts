@@ -1,3 +1,4 @@
+import { AppState } from "@types";
 import { Dispatch, ReactNode, SetStateAction } from "react";
 import { IChartOutputDatasets, ILineChartData } from "../charts";
 import { IChartData, IGeneral, IRatingData } from "../client_json";
@@ -58,15 +59,19 @@ export interface ChartSwitchersProviderData {
 	switchInsomnia: boolean;
 	switchProductivity: boolean;
 	switchRating: boolean;
+	arrayCharts: AppState;
 	setSwitchAnxiety: Dispatch<SetStateAction<boolean>>;
 	setSwitchDepression: Dispatch<SetStateAction<boolean>>;
 	setSwitchGeneral: Dispatch<SetStateAction<boolean>>;
 	setSwitchInsomnia: Dispatch<SetStateAction<boolean>>;
 	setSwitchProductivity: Dispatch<SetStateAction<boolean>>;
 	setSwitchRating: Dispatch<SetStateAction<boolean>>;
+	setArrayCharts: Dispatch<SetStateAction<AppState>>;
 }
 
 export interface ColorsProviderData {
+	activeBG: string;
+	activeColor: boolean;
 	buttonsPrimaryColor: string;
 	primaryColor: string;
 	secondaryColor: string;
@@ -78,6 +83,8 @@ export interface ColorsProviderData {
 	chartBarBorderPrimaryColor: string;
 	chartBarBGSecondaryColor: string;
 	chartBarBorderSecondaryColor: string;
+	setActiveBG: Dispatch<SetStateAction<string>>;
+	setActiveColor: Dispatch<SetStateAction<boolean>>;
 	setButtonsPrimaryColor: Dispatch<SetStateAction<string>>;
 	setPrimaryColor: Dispatch<SetStateAction<string>>;
 	setSecondaryColor: Dispatch<SetStateAction<string>>;

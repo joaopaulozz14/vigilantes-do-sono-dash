@@ -1,4 +1,8 @@
-import { AllProvidersProps, ChartSwitchersProviderData } from "@types";
+import {
+	AllProvidersProps,
+	AppState,
+	ChartSwitchersProviderData,
+} from "@types";
 import { createContext, useContext, useState } from "react";
 
 const ChartSwitchersContext = createContext<ChartSwitchersProviderData>(
@@ -15,6 +19,7 @@ export const ChartSwitchersProvider = ({
 	const [switchProductivity, setSwitchProductivity] =
 		useState<boolean>(false);
 	const [switchRating, setSwitchRating] = useState<boolean>(false);
+	const [arrayCharts, setArrayCharts] = useState<AppState>({ items: [] });
 
 	return (
 		<ChartSwitchersContext.Provider
@@ -25,12 +30,14 @@ export const ChartSwitchersProvider = ({
 				switchInsomnia,
 				switchProductivity,
 				switchRating,
+				arrayCharts,
 				setSwitchAnxiety,
 				setSwitchDepression,
 				setSwitchGeneral,
 				setSwitchInsomnia,
 				setSwitchProductivity,
 				setSwitchRating,
+				setArrayCharts,
 			}}
 		>
 			{children}

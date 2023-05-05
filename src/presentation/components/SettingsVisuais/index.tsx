@@ -1,16 +1,18 @@
 import {
 	SSettingsContainerVisuais,
 	SSettingsFormVisuais,
-	//SSettingsFormVisuaisTheme,
+	SSettingsFormVisuaisTheme,
 	SSettingsInputVisuais,
 } from "presentation";
 import { useColors } from "main";
-//import { useState } from "react";
-/* import sun from "../../assets/images/sunny.png";
-import moon from "../../assets/images/moon.png"; */
+import sun from "../../assets/images/sunny.png";
+import moon from "../../assets/images/moon.png";
 export const SettingsVisuais = (): JSX.Element => {
 	const {
+		//activeBG,
+		activeColor,
 		primaryColor,
+		//primaryBGColor,
 		chartBarBGPrimaryColor,
 		chartBarBorderPrimaryColor,
 		chartBarBGSecondaryColor,
@@ -18,6 +20,8 @@ export const SettingsVisuais = (): JSX.Element => {
 		chartLineBGColor,
 		chartLineBorderColor,
 		secondaryBGColor,
+		setActiveBG,
+		setActiveColor,
 		setChartLineBorderColor,
 		setChartBarBGPrimaryColor,
 		setChartBarBorderPrimaryColor,
@@ -25,10 +29,14 @@ export const SettingsVisuais = (): JSX.Element => {
 		setChartLineBGColor,
 		setChartBarBorderSecondaryColor,
 		//setSecondaryBGColor,
-		//setPrimaryColor,
+		//setPrimaryBGColor,
 		saveColors,
 	} = useColors();
 
+	const radioHandler = (e): void => {
+		setActiveBG(e.target.value);
+		setActiveColor(!activeColor);
+	};
 	return (
 		<SSettingsContainerVisuais>
 			<SSettingsFormVisuais
@@ -119,18 +127,20 @@ export const SettingsVisuais = (): JSX.Element => {
 				</button>
 			</SSettingsFormVisuais>
 
-			{/* <SSettingsFormVisuaisTheme
+			<SSettingsFormVisuaisTheme
 				action=""
 				primaryColor={primaryColor}
 				backgroundColor={secondaryBGColor}
 			>
 				<h1>Personalize o tema da interface</h1>
+
 				<div>
 					<input
 						type="radio"
 						id="lightTheme"
-						name="lightThme"
-						value="light"
+						name="theme"
+						value="#f1f1f1"
+						onChange={radioHandler}
 					/>
 					<label htmlFor="lightTheme">
 						<img
@@ -139,13 +149,13 @@ export const SettingsVisuais = (): JSX.Element => {
 						/>
 					</label>
 				</div>
-
 				<div>
 					<input
 						type="radio"
 						id="darkTheme"
-						name="darkTheme"
-						value="dark"
+						name="theme"
+						value="#1f202b"
+						onChange={radioHandler}
 					/>
 					<label htmlFor="darkTheme">
 						<img
@@ -154,7 +164,7 @@ export const SettingsVisuais = (): JSX.Element => {
 						/>
 					</label>
 				</div>
-			</SSettingsFormVisuaisTheme> */}
+			</SSettingsFormVisuaisTheme>
 		</SSettingsContainerVisuais>
 	);
 };
